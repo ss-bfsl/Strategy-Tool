@@ -9338,8 +9338,8 @@ export const MF_SIF_DATA = {
   "headline": [
     {
       "label": "Total AUM",
-      "value": "₹87.07 Lakh Cr",
-      "change": 1.5,
+      "value": "₹82.64 Lakh Cr",
+      "change": -5.1,
       "history": [
         {
           "month": "Mar 2024",
@@ -9460,13 +9460,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Aug 2026",
           "value": 87.07
+        },
+        {
+          "month": "Sep 2026",
+          "value": 82.64
         }
       ]
     },
     {
       "label": "Equity AUM",
-      "value": "₹39.25 Lakh Cr",
-      "change": 2.2,
+      "value": "₹38.89 Lakh Cr",
+      "change": -0.9,
       "history": [
         {
           "month": "Mar 2024",
@@ -9587,13 +9591,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Aug 2026",
           "value": 39.25
+        },
+        {
+          "month": "Sep 2026",
+          "value": 38.89
         }
       ]
     },
     {
       "label": "MF Schemes",
-      "value": "1,985",
-      "change": 1.1,
+      "value": "1,995",
+      "change": 0.5,
       "history": [
         {
           "month": "Mar 2024",
@@ -9714,12 +9722,16 @@ export const MF_SIF_DATA = {
         {
           "month": "Aug 2026",
           "value": 1985.0
+        },
+        {
+          "month": "Sep 2026",
+          "value": 1995.0
         }
       ]
     },
     {
       "label": "MF Folios",
-      "value": "28.35 Cr",
+      "value": "28.62 Cr",
       "change": 1.0,
       "history": [
         {
@@ -9841,6 +9853,10 @@ export const MF_SIF_DATA = {
         {
           "month": "Aug 2026",
           "value": 28.35
+        },
+        {
+          "month": "Sep 2026",
+          "value": 28.62
         }
       ]
     },
@@ -9915,60 +9931,9 @@ export const MF_SIF_DATA = {
       ]
     },
     {
-      "label": "SIF AUM",
-      "value": "₹31,175 Cr",
-      "change": 34.5,
-      "history": [
-        {
-          "month": "Oct 2025",
-          "value": 2010.4352133
-        },
-        {
-          "month": "Nov 2025",
-          "value": 2931.71
-        },
-        {
-          "month": "Dec 2025",
-          "value": 4892.32
-        },
-        {
-          "month": "Jan 2026",
-          "value": 6564.24
-        },
-        {
-          "month": "Feb 2026",
-          "value": 9710.87
-        },
-        {
-          "month": "Mar 2026",
-          "value": 10620.45
-        },
-        {
-          "month": "Apr 2026",
-          "value": 12329.05
-        },
-        {
-          "month": "May 2026",
-          "value": 13813.72
-        },
-        {
-          "month": "Jun 2026",
-          "value": 17857.77
-        },
-        {
-          "month": "Jul 2026",
-          "value": 23177.31
-        },
-        {
-          "month": "Aug 2026",
-          "value": 31175.43
-        }
-      ]
-    },
-    {
       "label": "SIF Folios",
-      "value": "125,539",
-      "change": 32.9,
+      "value": "156,483",
+      "change": 24.6,
       "history": [
         {
           "month": "Oct 2025",
@@ -10013,13 +9978,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Aug 2026",
           "value": 125539.0
+        },
+        {
+          "month": "Sep 2026",
+          "value": 156483.0
         }
       ]
     },
     {
       "label": "SIF Schemes",
-      "value": "33",
-      "change": 10.0,
+      "value": "34",
+      "change": 3.0,
       "history": [
         {
           "month": "Oct 2025",
@@ -10064,6 +10033,10 @@ export const MF_SIF_DATA = {
         {
           "month": "Aug 2026",
           "value": 33.0
+        },
+        {
+          "month": "Sep 2026",
+          "value": 34.0
         }
       ]
     },
