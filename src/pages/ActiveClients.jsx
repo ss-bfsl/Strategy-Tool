@@ -2,23 +2,35 @@ import { useMemo, useState } from 'react';
 import { useDataset } from '../lib/useDataset';
 import FetchBar from '../components/FetchBar';
 import DetailModal from '../components/DetailModal';
-import { Search } from 'lucide-react';
 
 export default function ActiveClients() {
   const { data, ...fetchMeta } = useDataset('brokerLeaderboard', 'monthly');
   const [sortKey, setSortKey] = useState('rank');
-  const [query, setQuery] = useState('');
+  const [filters, setFilters] = useState({ broker: '', activeClients: '', marketShare: '', change: '' });
   const [selected, setSelected] = useState(null);
 
   const filtered = useMemo(() => {
     if (!data) return [];
-    let rows = data;
-    if (query.trim()) {
-      const q = query.trim().toLowerCase();
-      rows = rows.filter((b) => b.broker.toLowerCase().includes(q));
-    }
-    return [...rows].sort((a, b) => (sortKey === 'rank' ? a.rank - b.rank : b[sortKey] - a[sortKey]));
-  }, [data, sortKey, query]);
+    const rows = data
+      .filter((broker) => broker.broker.toLowerCase() !== 'others')
+      .sort((a, b) => a.rank - b.rank)
+      .map((broker, index) => ({ ...broker, rank: index + 1 }));
+    const matches = (value, filter) => String(value ?? '').toLowerCase().includes(filter.trim().toLowerCase());
+    const visibleRows = rows.filter((broker) =>
+      matches(broker.broker, filters.broker) &&
+      matches(broker.activeClients?.toLocaleString('en-IN'), filters.activeClients) &&
+      matches(Number.isFinite(broker.marketShare) ? `${broker.marketShare}%` : '', filters.marketShare) &&
+      matches(Number.isFinite(broker.change) ? `${broker.change}%` : '', filters.change)
+    );
+    return [...visibleRows].sort((a, b) => {
+      if (sortKey === 'rank') return a.rank - b.rank;
+      const aValue = Number.isFinite(a[sortKey]) ? a[sortKey] : Number.NEGATIVE_INFINITY;
+      const bValue = Number.isFinite(b[sortKey]) ? b[sortKey] : Number.NEGATIVE_INFINITY;
+      return bValue - aValue;
+    });
+  }, [data, sortKey, filters]);
+
+  const updateFilter = (key, value) => setFilters((current) => ({ ...current, [key]: value }));
 
   return (
     <div className="content">
@@ -38,24 +50,6 @@ export default function ActiveClients() {
 
       <FetchBar {...fetchMeta} onRefresh={fetchMeta.refresh} />
 
-      <div style={{ position: 'relative', marginBottom: 14, maxWidth: 320 }}>
-        <Search size={14} style={{ position: 'absolute', left: 10, top: '50%', transform: 'translateY(-50%)', color: 'var(--text-faint)' }} />
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search broker…"
-          style={{
-            width: '100%',
-            background: 'var(--panel-raised)',
-            border: '1px solid var(--steel)',
-            borderRadius: 3,
-            padding: '8px 10px 8px 32px',
-            color: 'var(--text)',
-            fontSize: 13,
-          }}
-        />
-      </div>
-
       <div className="panel" style={{ maxHeight: 640, overflow: 'auto' }}>
         {fetchMeta.loading ? (
           <div style={{ padding: 20, color: 'var(--text-dim)', fontSize: 13 }}>Loading dataset…</div>
@@ -71,7 +65,38 @@ export default function ActiveClients() {
                 <th onClick={() => setSortKey('marketShare')} style={{ cursor: 'pointer' }}>
                   Market share ↕
                 </th>
-                <th>MoM change</th>
+                <th onClick={() => setSortKey('change')} style={{ cursor: 'pointer' }}>
+                  MoM change ↕
+                </th>
+              </tr>
+              <tr>
+                <th />
+                {[
+                  ['broker', 'Filter broker'],
+                  ['activeClients', 'Filter clients'],
+                  ['marketShare', 'Filter share'],
+                  ['change', 'Filter MoM'],
+                ].map(([key, placeholder]) => (
+                  <th key={key}>
+                    <input
+                      aria-label={placeholder}
+                      value={filters[key]}
+                      onChange={(event) => updateFilter(key, event.target.value)}
+                      placeholder={placeholder}
+                      style={{
+                        boxSizing: 'border-box',
+                        width: '100%',
+                        minWidth: 90,
+                        background: 'var(--panel-raised)',
+                        border: '1px solid var(--steel)',
+                        borderRadius: 3,
+                        padding: '6px 8px',
+                        color: 'var(--text)',
+                        fontSize: 12,
+                      }}
+                    />
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody>
@@ -80,12 +105,15 @@ export default function ActiveClients() {
                   <td className="mono" style={{ color: 'var(--text-faint)' }}>{b.rank}</td>
                   <td>{b.broker}</td>
                   <td className="mono">{b.activeClients.toLocaleString('en-IN')}</td>
-                  <td className="mono">{typeof b.marketShare === 'number' ? `${b.marketShare}%` : '—'}</td>
-                  <td className={b.change >= 0 ? 'delta-up mono' : 'delta-down mono'}>
-                    {b.change >= 0 ? '▲' : '▼'} {Math.abs(b.change)}%
+                  <td className="mono">{Number.isFinite(b.marketShare) ? `${b.marketShare}%` : '—'}</td>
+                  <td className={`${Number.isFinite(b.change) && b.change < 0 ? 'delta-down' : 'delta-up'} mono`}>
+                    {Number.isFinite(b.change) ? `${b.change >= 0 ? '▲' : '▼'} ${Math.abs(b.change)}%` : '—'}
                   </td>
                 </tr>
               ))}
+              {!fetchMeta.loading && filtered.length === 0 && (
+                <tr><td colSpan={5} style={{ padding: 18, color: 'var(--text-dim)' }}>No brokers match these filters.</td></tr>
+              )}
             </tbody>
           </table>
         )}
