@@ -6,7 +6,7 @@ import DetailModal from '../components/DetailModal';
 export default function ActiveClients() {
   const { data, ...fetchMeta } = useDataset('brokerLeaderboard', 'monthly');
   const [sortKey, setSortKey] = useState('rank');
-  const [filters, setFilters] = useState({ broker: '', activeClients: '', marketShare: '', change: '' });
+  const [sortDirection, setSortDirection] = useState('desc');
   const [selected, setSelected] = useState(null);
 
   const filtered = useMemo(() => {
@@ -15,22 +15,23 @@ export default function ActiveClients() {
       .filter((broker) => broker.broker.toLowerCase() !== 'others')
       .sort((a, b) => a.rank - b.rank)
       .map((broker, index) => ({ ...broker, rank: index + 1 }));
-    const matches = (value, filter) => String(value ?? '').toLowerCase().includes(filter.trim().toLowerCase());
-    const visibleRows = rows.filter((broker) =>
-      matches(broker.broker, filters.broker) &&
-      matches(broker.activeClients?.toLocaleString('en-IN'), filters.activeClients) &&
-      matches(Number.isFinite(broker.marketShare) ? `${broker.marketShare}%` : '', filters.marketShare) &&
-      matches(Number.isFinite(broker.change) ? `${broker.change}%` : '', filters.change)
-    );
-    return [...visibleRows].sort((a, b) => {
+    return [...rows].sort((a, b) => {
       if (sortKey === 'rank') return a.rank - b.rank;
-      const aValue = Number.isFinite(a[sortKey]) ? a[sortKey] : Number.NEGATIVE_INFINITY;
-      const bValue = Number.isFinite(b[sortKey]) ? b[sortKey] : Number.NEGATIVE_INFINITY;
-      return bValue - aValue;
+      const aValid = Number.isFinite(a[sortKey]);
+      const bValid = Number.isFinite(b[sortKey]);
+      if (!aValid || !bValid) return aValid ? -1 : bValid ? 1 : 0;
+      return sortDirection === 'desc' ? b[sortKey] - a[sortKey] : a[sortKey] - b[sortKey];
     });
-  }, [data, sortKey, filters]);
+  }, [data, sortKey, sortDirection]);
 
-  const updateFilter = (key, value) => setFilters((current) => ({ ...current, [key]: value }));
+  const toggleSort = (key) => {
+    if (sortKey === key) {
+      setSortDirection((direction) => direction === 'desc' ? 'asc' : 'desc');
+      return;
+    }
+    setSortKey(key);
+    setSortDirection('desc');
+  };
 
   return (
     <div className="content">
@@ -59,44 +60,15 @@ export default function ActiveClients() {
               <tr>
                 <th>#</th>
                 <th>Broker</th>
-                <th onClick={() => setSortKey('activeClients')} style={{ cursor: 'pointer' }}>
-                  Active clients ↕
+                <th onClick={() => toggleSort('activeClients')} style={{ cursor: 'pointer' }}>
+                  Active clients {sortKey === 'activeClients' ? (sortDirection === 'desc' ? '↓' : '↑') : '↕'}
                 </th>
-                <th onClick={() => setSortKey('marketShare')} style={{ cursor: 'pointer' }}>
-                  Market share ↕
+                <th onClick={() => toggleSort('marketShare')} style={{ cursor: 'pointer' }}>
+                  Market share {sortKey === 'marketShare' ? (sortDirection === 'desc' ? '↓' : '↑') : '↕'}
                 </th>
-                <th onClick={() => setSortKey('change')} style={{ cursor: 'pointer' }}>
-                  MoM change ↕
+                <th onClick={() => toggleSort('change')} style={{ cursor: 'pointer' }}>
+                  MoM change {sortKey === 'change' ? (sortDirection === 'desc' ? '↓' : '↑') : '↕'}
                 </th>
-              </tr>
-              <tr>
-                <th />
-                {[
-                  ['broker', 'Filter broker'],
-                  ['activeClients', 'Filter clients'],
-                  ['marketShare', 'Filter share'],
-                  ['change', 'Filter MoM'],
-                ].map(([key, placeholder]) => (
-                  <th key={key}>
-                    <input
-                      aria-label={placeholder}
-                      value={filters[key]}
-                      onChange={(event) => updateFilter(key, event.target.value)}
-                      placeholder={placeholder}
-                      style={{
-                        boxSizing: 'border-box',
-                        width: '100%',
-                        minWidth: 90,
-                        background: 'var(--panel-raised)',
-                        border: '1px solid var(--steel)',
-                        borderRadius: 3,
-                        padding: '6px 8px',
-                        color: 'var(--text)',
-                        fontSize: 12,
-                      }}
-                    />
-                  </th>
-                ))}
               </tr>
             </thead>
             <tbody>
@@ -112,7 +84,7 @@ export default function ActiveClients() {
                 </tr>
               ))}
               {!fetchMeta.loading && filtered.length === 0 && (
-                <tr><td colSpan={5} style={{ padding: 18, color: 'var(--text-dim)' }}>No brokers match these filters.</td></tr>
+                <tr><td colSpan={5} style={{ padding: 18, color: 'var(--text-dim)' }}>No broker data available.</td></tr>
               )}
             </tbody>
           </table>
