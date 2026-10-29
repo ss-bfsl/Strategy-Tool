@@ -4,6 +4,7 @@ import FetchBar from '../components/FetchBar';
 import SectionPreviewCard from '../components/SectionPreviewCard';
 import DetailModal from '../components/DetailModal';
 import { BarChart, Bar, ResponsiveContainer, XAxis, YAxis, Tooltip, CartesianGrid, PieChart, Pie, Cell } from 'recharts';
+import { Sparkles } from 'lucide-react';
 
 const shortName = (name = '') => {
   const aliases = [
@@ -53,7 +54,18 @@ export default function Dashboard() {
     const latestMonth = all.flatMap((b) => b.history ?? []).map((p) => p.month).at(-1) ?? null;
     const gainers = [...named.slice(0, 50)].sort((a, b) => (b.change ?? 0) - (a.change ?? 0));
     const topThreeShare = leadersWithShare.slice(0, 3).reduce((sum, b) => sum + Number(b.marketShare || 0), 0);
-    return { rows: [...leadersWithShare, remaining], total, topThreeShare, gainer: gainers[0], loser: gainers.at(-1), latestMonth };
+    const threeMonthMomentum = named.slice(0, 50)
+      .map((broker) => {
+        const points = broker.history ?? [];
+        if (points.length < 4) return null;
+        const start = points.at(-4);
+        const end = points.at(-1);
+        if (!start.value || !end.value) return null;
+        return { broker, start, end, change: (end.value - start.value) / start.value * 100 };
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.change - a.change)[0] ?? null;
+    return { rows: [...leadersWithShare, remaining], total, topThreeShare, gainer: gainers[0], loser: gainers.at(-1), latestMonth, threeMonthMomentum };
   }, [brokers.data]);
 
   const demat = useMemo(() => {
@@ -87,6 +99,16 @@ export default function Dashboard() {
         <Stat label="BIGGEST LOSER · MOM" value={brokerSummary.loser ? shortName(brokerSummary.loser.broker) : '—'} note={brokerSummary.loser ? `▼ ${Math.abs(brokerSummary.loser.change ?? 0)}% month on month` : 'No comparison available'} tone="delta-down" />
         <Stat label="DEMAT ACCOUNTS" value={demat ?? '—'} note="NSDL + CDSL" />
       </section>
+
+      {brokerSummary.threeMonthMomentum && <section className="dashboard-insight panel" aria-label="Three month momentum insight">
+        <div className="insight-icon"><Sparkles size={18} /></div>
+        <div className="insight-copy">
+          <span className="insight-kicker">THE 3-MONTH SIGNAL <i /></span>
+          <h2>{shortName(brokerSummary.threeMonthMomentum.broker.broker)} has the strongest client momentum</h2>
+          <p>Its active base {brokerSummary.threeMonthMomentum.change >= 0 ? 'grew' : 'declined'} <strong>{Math.abs(brokerSummary.threeMonthMomentum.change).toFixed(1)}%</strong> between {brokerSummary.threeMonthMomentum.start.month} and {brokerSummary.threeMonthMomentum.end.month}, {brokerSummary.threeMonthMomentum.change >= 0 ? 'adding' : 'losing'} <strong>{inr(Math.abs(brokerSummary.threeMonthMomentum.end.value - brokerSummary.threeMonthMomentum.start.value))}</strong> clients. Strongest three-month move among the top 50.</p>
+        </div>
+        <div className={`insight-value${brokerSummary.threeMonthMomentum.change < 0 ? ' negative' : ''}`}><strong>{brokerSummary.threeMonthMomentum.change >= 0 ? '+' : '−'}{Math.abs(brokerSummary.threeMonthMomentum.change).toFixed(1)}%</strong><span>3M MOVE</span></div>
+      </section>}
 
       <section className="panel dashboard-chart-panel">
         <div className="dashboard-section-head">

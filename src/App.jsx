@@ -5,6 +5,7 @@ import ActiveClients from './pages/ActiveClients';
 import BrokingIndustry from './pages/BrokingIndustry';
 import News from './pages/News';
 import MutualFunds from './pages/MutualFunds';
+import Competition from './pages/Competition';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/broking-industry" element={<BrokingIndustry />} />
           <Route path="/news" element={<News />} />
           <Route path="/mutual-funds" element={<MutualFunds />} />
+          <Route path="/competition" element={<Competition />} />
         </Routes>
       </div>
     </div>

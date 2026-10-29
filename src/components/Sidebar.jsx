@@ -1,10 +1,11 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, BarChart3, Users, Newspaper, PiggyBank } from 'lucide-react';
+import { LayoutDashboard, BarChart3, Users, Newspaper, PiggyBank, GitCompareArrows } from 'lucide-react';
 
 const LINKS = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard, end: true },
   { to: '/active-clients', label: 'NSE Active Clients', icon: Users },
   { to: '/broking-industry', label: 'Broking Industry Data', icon: BarChart3 },
+  { to: '/competition', label: 'Competition', icon: GitCompareArrows },
   { to: '/news', label: 'Competitor News', icon: Newspaper },
   { to: '/mutual-funds', label: 'MF & SIF Data', icon: PiggyBank },
 ];

@@ -298,6 +298,143 @@ def build_mf_sif(xl):
     return {"headline": headline}
 
 
+# ────────────────────────── company competition data ──────────────────────────
+
+COMPANY_COLUMNS = [
+    ("Groww", 2, "tech"),
+    ("Angel One", 3, "tech"),
+    ("Zerodha", 4, "tech"),
+    ("Bajaj Broking", 5, "tech"),
+    ("Motilal", 8, "traditional"),
+    ("ICICI Sec", 9, "traditional"),
+    ("HDFC Sec", 10, "traditional"),
+    ("Kotak Sec", 11, "traditional"),
+]
+
+
+def competition_period(sheet_name, df):
+    pattern = re.compile(r"FY\s*'?\s*(\d{2})(?:\s*H\s*([12]))?", re.I)
+    for value in [sheet_name, *df.iloc[:4, :4].to_numpy().ravel().tolist()]:
+        if not isinstance(value, str):
+            continue
+        match = pattern.search(value.strip())
+        if match:
+            return f"FY{match.group(1)}H{match.group(2)}" if match.group(2) else f"FY{match.group(1)}"
+    return None
+
+
+def competition_number(value):
+    if not is_valid(value):
+        return None
+    return to_num(value)
+
+
+def build_competition_data(xl):
+    """Read competition comparison tabs, including the workbook's historical 'Competiton' spelling."""
+    output = []
+    known_labels = {"total revenue", "pat", "roe", "mtf book", "networth", "avg networth"}
+
+    for sheet_name in xl.sheet_names:
+        normalized_name = re.sub(r"[^a-z]", "", sheet_name.lower())
+        candidate_name = normalized_name.startswith("competition") or normalized_name.startswith("competiton")
+        period_match = re.search(r"fy\s*'?\s*\d{2}(?:\s*h\s*[12])?", sheet_name, re.I)
+        if not candidate_name and not period_match:
+            continue
+
+        df = pd.read_excel(xl, sheet_name=sheet_name, header=None, dtype=object)
+        labels = {
+            re.sub(r"\s+", " ", str(value)).strip().lower()
+            for value in df.to_numpy().ravel()
+            if isinstance(value, str) and value.strip()
+        }
+        if not candidate_name and len(labels & known_labels) < 3:
+            continue
+
+        period = competition_period(sheet_name, df)
+        if not period:
+            continue
+
+        companies = [{
+            "name": name,
+            "group": "Tech Driven Brokers" if group == "tech" else "Traditional Brokers",
+        } for name, _, group in COMPANY_COLUMNS]
+        header_rows = []
+        for row_index in range(min(24, df.shape[0])):
+            matches = sum(
+                1 for name, column, _ in COMPANY_COLUMNS
+                if column < df.shape[1]
+                and isinstance(df.iat[row_index, column], str)
+                and df.iat[row_index, column].strip().lower() == name.lower()
+            )
+            if matches >= 4:
+                header_rows.append(row_index)
+        if not header_rows:
+            continue
+        financial_header = header_rows[0]
+        revenue_header = header_rows[1] if len(header_rows) > 1 else None
+        metrics = []
+        financial_end = revenue_header if revenue_header is not None else df.shape[0]
+        for data_index in range(financial_header + 1, financial_end):
+            left_label = df.iat[data_index, 1] if df.shape[1] > 1 else None
+            label = str(left_label).strip() if isinstance(left_label, str) and left_label.strip() else str(df.iat[data_index, 0]).strip() if isinstance(df.iat[data_index, 0], str) else ""
+            if not label or label.lower() in {"revenue mix", "na", "-"}:
+                continue
+            values = {name: competition_number(df.iat[data_index, col]) if col < df.shape[1] else None for name, col, _ in COMPANY_COLUMNS}
+            if any(value is not None for value in values.values()):
+                metrics.append({
+                    "label": re.sub(r"\s+", " ", label),
+                    "format": "percent" if "roe" in label.lower() else "currency" if label.lower() in {"total revenue", "pat", "opening networth", "closing net worth", "avg networth", "mtf book", "networth"} else "number",
+                    "values": values,
+                })
+
+        if not metrics:
+            continue
+
+        revenue_mix = []
+        # The left and right halves of the worksheet may use different labels for the same row.
+        # Preserve each side's label, while borrowing the row's left label when the right label is blank.
+        header_row = revenue_header
+        if header_row is not None:
+            for row_index in range(header_row + 1, df.shape[0]):
+                left_raw = df.iat[row_index, 1] if df.shape[1] > 1 else None
+                right_raw = df.iat[row_index, 7] if df.shape[1] > 7 else None
+                left_label = str(left_raw).strip() if isinstance(left_raw, str) and left_raw.strip().lower() not in {"na", "-"} else ""
+                right_label = str(right_raw).strip() if isinstance(right_raw, str) and right_raw.strip().lower() not in {"na", "-"} else ""
+                left_values = {name: competition_number(df.iat[row_index, col]) if col < df.shape[1] else None for name, col, group in COMPANY_COLUMNS if group == "tech"}
+                right_values = {name: competition_number(df.iat[row_index, col]) if col < df.shape[1] else None for name, col, group in COMPANY_COLUMNS if group == "traditional"}
+                if not any(value is not None for value in [*left_values.values(), *right_values.values()]):
+                    continue
+                if not left_label and any(value is not None for value in left_values.values()):
+                    left_label = "Other / not specified"
+                if not right_label and any(value is not None for value in right_values.values()) and not left_label:
+                    right_label = "Other / not specified"
+                if not left_label and not right_label:
+                    left_label = "Other / not specified"
+                if left_label and (not right_label or left_label.lower() == right_label.lower()):
+                    revenue_mix.append({"label": left_label, "format": "percent", "values": {**left_values, **right_values}})
+                elif right_label and not left_label:
+                    revenue_mix.append({"label": right_label, "format": "percent", "values": {**left_values, **right_values}})
+                else:
+                    if left_label:
+                        revenue_mix.append({"label": left_label, "format": "percent", "values": left_values})
+                    if right_label:
+                        revenue_mix.append({"label": right_label, "format": "percent", "values": right_values})
+
+        output.append({
+            "id": period,
+            "label": period,
+            "groups": [
+                {"label": "Tech Driven Brokers", "companies": [name for name, _, group in COMPANY_COLUMNS if group == "tech"]},
+                {"label": "Traditional Brokers", "companies": [name for name, _, group in COMPANY_COLUMNS if group == "traditional"]},
+            ],
+            "financials": metrics,
+            "revenueMix": revenue_mix,
+        })
+
+    unique_periods = {item["id"]: item for item in output}
+    return {"periods": list(unique_periods.values())}
+
+
 # ────────────────────────── JS output ──────────────────────────
 
 def to_js(obj):
@@ -351,6 +488,15 @@ export const MF_SIF_DATA = {to_js(mf_sif)};
     output_path.write_text(content, encoding="utf-8")
 
 
+def write_competition_data(output_path, competition):
+    competition_path = output_path.parent / "competitionData.js"
+    competition_path.write_text(
+        f"// AUTO-GENERATED by scripts/generate_data.py from Competition workbook tabs.\n"
+        f"export const COMPETITION_DATA = {to_js(competition)};\n",
+        encoding="utf-8",
+    )
+
+
 # ────────────────────────── main ──────────────────────────
 
 def main():
@@ -397,8 +543,13 @@ def main():
     mf_sif = build_mf_sif(xl)
     print(f"       -> {len(mf_sif['headline'])} headline stats, each with full history")
 
+    print("[5/5] Building competition comparisons ...")
+    competition = build_competition_data(xl)
+    print(f"       -> {len(competition['periods'])} fiscal period(s)")
+
     output_path = Path(args.output)
     write_mock_data(output_path, brokers, industry, mf_sif)
+    write_competition_data(output_path, competition)
     print(f"\n[OK] Wrote {output_path}")
     print("Refresh your browser (the dev server will hot-reload automatically).")
 

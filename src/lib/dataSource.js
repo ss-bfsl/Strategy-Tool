@@ -19,14 +19,16 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 import { BROKER_LEADERBOARD, INDUSTRY_PARAMS, NEWS_ITEMS, MF_SIF_DATA } from '../data/mockData';
+import { COMPETITION_DATA } from '../data/competitionData';
 
 const STORAGE_PREFIX = 'cbt:'; // competitor-benchmark-tool
-const DATA_VERSION = 4;
+const DATA_VERSION = 5;
 const SOURCE_DATA = {
   brokerLeaderboard: BROKER_LEADERBOARD,
   industryParams: INDUSTRY_PARAMS,
   news: NEWS_ITEMS,
   mfSif: MF_SIF_DATA,
+  competition: COMPETITION_DATA,
 };
 
 const STORAGE = {
@@ -119,6 +121,8 @@ function shouldRefreshFromSource(datasetKey, cached) {
   const sourceData = SOURCE_DATA[datasetKey];
   if (!cached || !sourceData) return false;
 
+  if (JSON.stringify(cached.data) !== JSON.stringify(sourceData)) return true;
+
   const cachedTime = new Date(cached.fetchedAt || 0).getTime();
   const latestSourceTime = getLatestSourceTimestamp(sourceData);
   if (!latestSourceTime) return false;
@@ -150,11 +154,17 @@ async function fetchMfSifRemote() {
   return MF_SIF_DATA;
 }
 
+async function fetchCompetitionRemote() {
+  await delay(300);
+  return COMPETITION_DATA;
+}
+
 const REMOTE_FETCHERS = {
   brokerLeaderboard: fetchBrokerLeaderboardRemote,
   industryParams: fetchIndustryParamsRemote,
   news: fetchNewsRemote,
   mfSif: fetchMfSifRemote,
+  competition: fetchCompetitionRemote,
 };
 
 /**
