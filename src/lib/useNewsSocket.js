@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 const API_URL = import.meta.env.DEV
   ? 'http://localhost:8765/api/news'
   : `${import.meta.env.BASE_URL}news.json`;
+const STATIC_NEWS_URL = `${import.meta.env.BASE_URL}news.json`;
 
 function normalize(raw) {
   // "initial" items look like {source, title, link, published_at, seen_at, eligible}
@@ -36,12 +37,22 @@ export function useNewsApi() {
         setItems((data.items || []).map(normalize));
         setStatus('open');
       })
-      .catch((error) => {
-        if (!cancelled) {
-          console.error('News API request failed:', error);
-          setStatus('closed');
-        }
-      });
+      .catch(() => fetch(STATIC_NEWS_URL)
+        .then((response) => {
+          if (!response.ok) throw new Error(`Saved news returned ${response.status}`);
+          return response.json();
+        })
+        .then((data) => {
+          if (cancelled) return;
+          setItems((data.items || []).map(normalize));
+          setStatus('static');
+        })
+        .catch((error) => {
+          if (!cancelled) {
+            console.error('News data could not be loaded:', error);
+            setStatus('closed');
+          }
+        }));
 
     return () => {
       cancelled = true;

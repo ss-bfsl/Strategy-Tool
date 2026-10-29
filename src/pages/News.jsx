@@ -21,6 +21,7 @@ function newsTimestamp(item) {
 const STATUS_LABEL = {
   connecting: 'Connecting…',
   open: 'Live',
+  static: 'Saved feed · live service offline',
   closed: 'Disconnected — is main.py running?',
   unavailable: 'Live feed unavailable on this deployment',
 };
@@ -28,6 +29,7 @@ const STATUS_LABEL = {
 const STATUS_COLOR = {
   connecting: 'var(--amber)',
   open: 'var(--teal)',
+  static: 'var(--amber)',
   closed: 'var(--rose)',
   unavailable: 'var(--text-faint)',
 };
@@ -53,71 +55,65 @@ export default function News() {
   };
 
   return (
-    <div className="content">
-      <div className="page-head">
+    <div className="content product-page news-page">
+      <div className="page-head product-page-head">
         <div>
+          <div className="eyebrow">COMPETITOR INTELLIGENCE · LAST 24 HOURS</div>
           <h1 className="page-title">Competitor news</h1>
           <div className="page-sub">
-            Live feed from your news-alerts service — product launches, partnerships, funding and
-            regulatory moves, filtered by your keyword rules.
+            Recent updates on broker products, performance and strategic moves, filtered by your keyword rules.
           </div>
         </div>
       </div>
 
       <div
-        className="panel"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '10px 16px',
-          marginBottom: 20,
-          flexWrap: 'wrap',
-          gap: 10,
-        }}
+        className="panel news-status-panel"
       >
-        <div className="fetch-status">
+        <div className="news-status-copy"><div className="fetch-status">
           <Circle size={10} fill={STATUS_COLOR[status]} stroke="none" />
           {STATUS_LABEL[status]}
-        </div>
-        <button className="btn" onClick={reconnect} disabled={status === 'unavailable'}>
+        </div><span>{visibleItems.length} unread {visibleItems.length === 1 ? 'story' : 'stories'} · previous 24 hours retained when no new story arrives</span></div>
+        <button className="btn news-reconnect" onClick={reconnect} disabled={status === 'unavailable'}>
           <RefreshCw size={13} />
           Reconnect
         </button>
       </div>
 
       {visibleItems.length === 0 ? (
-        <div style={{ padding: 20, color: 'var(--text-dim)', fontSize: 13 }}>
+        <div className="panel news-empty">
+          <span className="news-empty-mark"><Circle size={12} /></span>
+          <strong>
           {status === 'open'
-            ? readIds.size > 0 ? 'No unread news.' : 'No matching news yet.'
-            : 'News data could not be loaded. Try again.'}
+            ? readIds.size > 0 ? 'You’re caught up.' : 'No matching stories in the last 24 hours.'
+            : 'News data could not be loaded.'}
+          </strong>
+          <span>{status === 'open' ? 'New qualifying coverage will appear here as it is collected.' : 'Reconnect the feed or start the news service to try again.'}</span>
         </div>
       ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div className="news-story-list">
           {visibleItems.map((n) => (
             <article
               key={n.id}
-              className="panel"
-              style={{ padding: '16px 18px' }}
+              className="panel news-story"
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8, flexWrap: 'wrap', gap: 8 }}>
+              <div className="news-story-meta">
                 <span className="tag">{n.company || 'News'}</span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span className="mono" style={{ fontSize: 11.5, color: 'var(--text-faint)' }}>
+                <div className="news-story-actions">
+                  <span className="mono news-story-date">
                     {new Date(n.date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}
                   </span>
-                  <button className="btn" onClick={() => markAsRead(n.id)} style={{ padding: '4px 9px', fontSize: 11.5 }}>
+                  <button className="btn news-read-button" onClick={() => markAsRead(n.id)}>
                     <Check size={13} />
                     Read
                   </button>
                 </div>
               </div>
-              <a href={n.sourceUrl} target="_blank" rel="noreferrer" style={{ fontSize: 14.5, fontWeight: 600, marginBottom: 6, display: 'block', color: 'inherit' }}>
+              <a className="news-story-title" href={n.sourceUrl} target="_blank" rel="noreferrer">
                 {n.title}
               </a>
               {n.summary && (
                 <div
-                  style={{ fontSize: 13, color: 'var(--text-dim)', lineHeight: 1.5 }}
+                  className="news-story-summary"
                   dangerouslySetInnerHTML={{ __html: n.summary }}
                 />
               )}

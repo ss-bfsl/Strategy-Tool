@@ -21,7 +21,7 @@
 import { BROKER_LEADERBOARD, INDUSTRY_PARAMS, NEWS_ITEMS, MF_SIF_DATA } from '../data/mockData';
 
 const STORAGE_PREFIX = 'cbt:'; // competitor-benchmark-tool
-const DATA_VERSION = 3;
+const DATA_VERSION = 4;
 const SOURCE_DATA = {
   brokerLeaderboard: BROKER_LEADERBOARD,
   industryParams: INDUSTRY_PARAMS,

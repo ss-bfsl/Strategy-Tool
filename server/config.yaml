@@ -326,7 +326,7 @@
 #     company: "FYERS"
 #   - name: "Ashish Kehair"
 #     company: "Nuvama Wealth"
-recent_days: 2
+recent_days: 1
 
 excluded_keywords:
   # --- Brokerage & Analyst Calls ---
@@ -480,6 +480,12 @@ companies:
       - "SEBI"
       - "user growth"
       - "client base"
+      - "interest income"
+      - "revenue"
+      - "earnings"
+      - "financial results"
+      - "business mix"
+      - "margin trading"
 
   - name: "Groww"
     # blog_rss: "https://groww.in/blog/feed"

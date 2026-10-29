@@ -70,5 +70,30 @@
     "published_at": "2026-09-10T04:52:53+00:00",
     "seen_at": "2026-09-10T05:54:17.123222+00:00",
     "eligible": true
+  },
+  "livemint-zerodha-interest-income-fy26": {
+    "source": "News: Zerodha",
+    "title": "Interest income contributes 32% of Zerodha revenue: How it compares with Groww, Angel One",
+    "link": "https://www.livemint.com/companies/news/interest-income-contributes-32-of-zerodha-revenue-how-it-compares-with-groww-angel-one-11793159885918.html",
+    "summary": "Zerodha derived 32% of FY26 revenue from interest income; the story compares its revenue mix with Groww and Angel One, and covers F&O and MTF contributions.",
+    "published_at": "2026-10-28T05:57:00+00:00",
+    "seen_at": "2026-10-29T04:00:00+00:00",
+    "eligible": true
+  },
+  "9ae95894a0e8dbc76b78c821e182c05d8787c9f02bfa359e626760351fcdc41e": {
+    "source": "News: Zerodha",
+    "title": "Zerodha Cuts Broking Dependence to 44% of Revenue in FY26 as Float Income Rises to 32% - Elets BFSI",
+    "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPTU1JRmo1aWJ5N0YyWGhLYTV0S2Rsb3M2d1hQaEJicm9RUXFmNUFDMU1xaEdlRTdRSk95X1g1T3dYNVV3bzVnRWVxZmJFc3ZPZEtubkhQQjJ2dTgwVUs5T1JPSDFnVGtpSjIzakpWVlJnY3NLNldIekthM1J0SUVlNmhMb09xTFY4NloyYUNXMVk5UVRFRUxTa1lic1VocnpPUUI3LUlCSlZXSmc3S1E?oc=5",
+    "published_at": "2026-10-28T07:37:48+00:00",
+    "seen_at": "2026-10-29T04:36:23.624385+00:00",
+    "eligible": true
+  },
+  "e396aaace21a313b3caeaee3ef04f222ec94d9c77ab5ed5b8da020060fef0bca": {
+    "source": "News: Upstox",
+    "title": "IRDAI insurance reforms: New distribution rules only after consensus, says chairman Ajay Seth; What policyholders should know - Upstox",
+    "link": "https://news.google.com/rss/articles/CBMimAJBVV95cUxPMmVHd1JCdWlSYUtfX043YWdQNE9DMUlZYmMzeEFpUHBTVFFZQnJCSVpiTEpyUEdJWFJCb0R3NXB2RVp4cnFudk1WUHlhR2ZyenhiZmRCcm1UZndTM1NCMVg2Tkl3clI3cWp0THRia1Vuamx4NnJRUm9weVA2YXlkOVd4cnRjV09uXzA4eGlmYXA2bG0wcENsSURWRTY3bElmQWVNa1Z2N1I3WFh4aGZWYmZpNWpBNGRhbFlkSWlLanA0c1JfOVM5LW9IdFFqMFR6V0ZYZjBYTW56SG81LWM0dVg0YjRiNUdPOGpvTWlzb2ZqWWhid1BfeEVEa3JOSVBqVW81VUtfa0RManEzVDNyb3FoMlp2SFRZ?oc=5",
+    "published_at": "2026-10-28T07:38:19+00:00",
+    "seen_at": "2026-10-29T04:36:24.337389+00:00",
+    "eligible": true
   }
 }
