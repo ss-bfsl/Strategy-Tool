@@ -44,7 +44,7 @@ export const BROKER_LEADERBOARD = [
     "rank": 2,
     "broker": "Zerodha Broking Limited",
     "activeClients": 6791541,
-    "marketShare": 15.06,
+    "marketShare": 15.07,
     "change": -0.08,
     "history": [
       {
@@ -274,7 +274,7 @@ export const BROKER_LEADERBOARD = [
   {
     "rank": 9,
     "broker": "Others",
-    "activeClients": 1038926,
+    "activeClients": 1040539,
     "marketShare": NaN,
     "change": 0.43,
     "history": [
@@ -292,15 +292,15 @@ export const BROKER_LEADERBOARD = [
       },
       {
         "month": "Jul 2026",
-        "value": 1079295
+        "value": 1080874
       },
       {
         "month": "Aug 2026",
-        "value": 1034455
+        "value": 1036079
       },
       {
         "month": "Sep 2026",
-        "value": 1038926
+        "value": 1040539
       }
     ]
   },
@@ -4781,35 +4781,6 @@ export const BROKER_LEADERBOARD = [
     "broker": "Barclays Securities (india) Private Limited",
     "activeClients": 237,
     "marketShare": NaN,
-    "change": -1.25,
-    "history": [
-      {
-        "month": "May 2026",
-        "value": 227
-      },
-      {
-        "month": "Jun 2026",
-        "value": 229
-      },
-      {
-        "month": "Jul 2026",
-        "value": 236
-      },
-      {
-        "month": "Aug 2026",
-        "value": 240
-      },
-      {
-        "month": "Sep 2026",
-        "value": 237
-      }
-    ]
-  },
-  {
-    "rank": 163,
-    "broker": "Barclays Securities (india) Private Limited",
-    "activeClients": 237,
-    "marketShare": NaN,
     "change": 3285.71,
     "history": [
       {
@@ -4835,11 +4806,11 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 164,
+    "rank": 163,
     "broker": "Multigain Securities Services Pvt. Ltd.",
     "activeClients": 185,
     "marketShare": NaN,
-    "change": -1.07,
+    "change": 0,
     "history": [
       {
         "month": "May 2026",
@@ -4854,104 +4825,42 @@ export const BROKER_LEADERBOARD = [
         "value": 187
       },
       {
-        "month": "Aug 2026",
-        "value": 187
+        "month": "Sep 2026",
+        "value": 185
+      }
+    ]
+  },
+  {
+    "rank": 164,
+    "broker": "Sunshine Stock Broking Private Limited",
+    "activeClients": 183,
+    "marketShare": NaN,
+    "change": 0,
+    "history": [
+      {
+        "month": "Apr 2026",
+        "value": 181
+      },
+      {
+        "month": "May 2026",
+        "value": 183
+      },
+      {
+        "month": "Jun 2026",
+        "value": 182
+      },
+      {
+        "month": "Jul 2026",
+        "value": 179
       },
       {
         "month": "Sep 2026",
-        "value": 185
+        "value": 183
       }
     ]
   },
   {
     "rank": 165,
-    "broker": "Multigain Securities Services Pvt. Ltd.",
-    "activeClients": 185,
-    "marketShare": NaN,
-    "change": 0,
-    "history": [
-      {
-        "month": "May 2026",
-        "value": 189
-      },
-      {
-        "month": "Jun 2026",
-        "value": 189
-      },
-      {
-        "month": "Jul 2026",
-        "value": 187
-      },
-      {
-        "month": "Sep 2026",
-        "value": 185
-      }
-    ]
-  },
-  {
-    "rank": 166,
-    "broker": "Sunshine Stock Broking Private Limited",
-    "activeClients": 183,
-    "marketShare": NaN,
-    "change": 0.55,
-    "history": [
-      {
-        "month": "Apr 2026",
-        "value": 181
-      },
-      {
-        "month": "May 2026",
-        "value": 183
-      },
-      {
-        "month": "Jun 2026",
-        "value": 182
-      },
-      {
-        "month": "Jul 2026",
-        "value": 179
-      },
-      {
-        "month": "Aug 2026",
-        "value": 182
-      },
-      {
-        "month": "Sep 2026",
-        "value": 183
-      }
-    ]
-  },
-  {
-    "rank": 167,
-    "broker": "Sunshine Stock Broking Private Limited",
-    "activeClients": 183,
-    "marketShare": NaN,
-    "change": 0,
-    "history": [
-      {
-        "month": "Apr 2026",
-        "value": 181
-      },
-      {
-        "month": "May 2026",
-        "value": 183
-      },
-      {
-        "month": "Jun 2026",
-        "value": 182
-      },
-      {
-        "month": "Jul 2026",
-        "value": 179
-      },
-      {
-        "month": "Sep 2026",
-        "value": 183
-      }
-    ]
-  },
-  {
-    "rank": 168,
     "broker": "Dyna Wegmans Securities Limited",
     "activeClients": 168,
     "marketShare": NaN,
@@ -4968,69 +4877,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 169,
-    "broker": "Avendus Wealth Management Private Limited",
-    "activeClients": 154,
-    "marketShare": NaN,
-    "change": 11.59,
-    "history": [
-      {
-        "month": "May 2026",
-        "value": 78
-      },
-      {
-        "month": "Jun 2026",
-        "value": 92
-      },
-      {
-        "month": "Jul 2026",
-        "value": 109
-      },
-      {
-        "month": "Aug 2026",
-        "value": 138
-      },
-      {
-        "month": "Sep 2026",
-        "value": 154
-      }
-    ]
-  },
-  {
-    "rank": 170,
-    "broker": "Nirmal Bang Equities Private Limited",
-    "activeClients": 154,
-    "marketShare": NaN,
-    "change": 0.65,
-    "history": [
-      {
-        "month": "Apr 2026",
-        "value": 144
-      },
-      {
-        "month": "May 2026",
-        "value": 146
-      },
-      {
-        "month": "Jun 2026",
-        "value": 146
-      },
-      {
-        "month": "Jul 2026",
-        "value": 150
-      },
-      {
-        "month": "Aug 2026",
-        "value": 153
-      },
-      {
-        "month": "Sep 2026",
-        "value": 154
-      }
-    ]
-  },
-  {
-    "rank": 171,
+    "rank": 166,
     "broker": "Avendus Wealth Management Private Limited",
     "activeClients": 154,
     "marketShare": NaN,
@@ -5059,7 +4906,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 172,
+    "rank": 167,
     "broker": "Nirmal Bang Equities Private Limited",
     "activeClients": 154,
     "marketShare": NaN,
@@ -5092,7 +4939,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 173,
+    "rank": 168,
     "broker": "Fortune Capital Services",
     "activeClients": 103,
     "marketShare": NaN,
@@ -5117,32 +4964,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 174,
-    "broker": "Fortune Capital Services",
-    "activeClients": 103,
-    "marketShare": NaN,
-    "change": -1.9,
-    "history": [
-      {
-        "month": "May 2026",
-        "value": 1
-      },
-      {
-        "month": "Jul 2026",
-        "value": 105
-      },
-      {
-        "month": "Aug 2026",
-        "value": 105
-      },
-      {
-        "month": "Sep 2026",
-        "value": 103
-      }
-    ]
-  },
-  {
-    "rank": 175,
+    "rank": 169,
     "broker": "New Berry Capitals Private Limited",
     "activeClients": 80,
     "marketShare": NaN,
@@ -5171,40 +4993,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 176,
-    "broker": "New Berry Capitals Private Limited",
-    "activeClients": 80,
-    "marketShare": NaN,
-    "change": -1.23,
-    "history": [
-      {
-        "month": "Apr 2026",
-        "value": 78
-      },
-      {
-        "month": "May 2026",
-        "value": 78
-      },
-      {
-        "month": "Jun 2026",
-        "value": 80
-      },
-      {
-        "month": "Jul 2026",
-        "value": 76
-      },
-      {
-        "month": "Aug 2026",
-        "value": 81
-      },
-      {
-        "month": "Sep 2026",
-        "value": 80
-      }
-    ]
-  },
-  {
-    "rank": 177,
+    "rank": 170,
     "broker": "Svcm Securities Private Limited",
     "activeClients": 79,
     "marketShare": NaN,
@@ -5221,28 +5010,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 178,
-    "broker": "Svcm Securities Private Limited",
-    "activeClients": 79,
-    "marketShare": NaN,
-    "change": -9.2,
-    "history": [
-      {
-        "month": "Jul 2026",
-        "value": 91
-      },
-      {
-        "month": "Aug 2026",
-        "value": 87
-      },
-      {
-        "month": "Sep 2026",
-        "value": 79
-      }
-    ]
-  },
-  {
-    "rank": 179,
+    "rank": 171,
     "broker": "Arete Securities Limited",
     "activeClients": 77,
     "marketShare": NaN,
@@ -5275,40 +5043,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 180,
-    "broker": "Arete Securities Limited",
-    "activeClients": 77,
-    "marketShare": NaN,
-    "change": -1.28,
-    "history": [
-      {
-        "month": "Apr 2026",
-        "value": 77
-      },
-      {
-        "month": "May 2026",
-        "value": 77
-      },
-      {
-        "month": "Jun 2026",
-        "value": 77
-      },
-      {
-        "month": "Jul 2026",
-        "value": 79
-      },
-      {
-        "month": "Aug 2026",
-        "value": 78
-      },
-      {
-        "month": "Sep 2026",
-        "value": 77
-      }
-    ]
-  },
-  {
-    "rank": 181,
+    "rank": 172,
     "broker": "Ksn Credence Commodities Trading Private Limited",
     "activeClients": 70,
     "marketShare": NaN,
@@ -5341,40 +5076,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 182,
-    "broker": "Ksn Credence Commodities Trading Private Limited",
-    "activeClients": 70,
-    "marketShare": NaN,
-    "change": -1.41,
-    "history": [
-      {
-        "month": "Apr 2026",
-        "value": 55
-      },
-      {
-        "month": "May 2026",
-        "value": 58
-      },
-      {
-        "month": "Jun 2026",
-        "value": 61
-      },
-      {
-        "month": "Jul 2026",
-        "value": 68
-      },
-      {
-        "month": "Aug 2026",
-        "value": 71
-      },
-      {
-        "month": "Sep 2026",
-        "value": 70
-      }
-    ]
-  },
-  {
-    "rank": 183,
+    "rank": 173,
     "broker": "Singhal Capital Services Ltd.",
     "activeClients": 59,
     "marketShare": NaN,
@@ -5403,40 +5105,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 184,
-    "broker": "Singhal Capital Services Ltd.",
-    "activeClients": 59,
-    "marketShare": NaN,
-    "change": -18.06,
-    "history": [
-      {
-        "month": "Apr 2026",
-        "value": 87
-      },
-      {
-        "month": "May 2026",
-        "value": 85
-      },
-      {
-        "month": "Jun 2026",
-        "value": 83
-      },
-      {
-        "month": "Jul 2026",
-        "value": 77
-      },
-      {
-        "month": "Aug 2026",
-        "value": 72
-      },
-      {
-        "month": "Sep 2026",
-        "value": 59
-      }
-    ]
-  },
-  {
-    "rank": 185,
+    "rank": 174,
     "broker": "Integra Securities Private Limited",
     "activeClients": 56,
     "marketShare": NaN,
@@ -5453,40 +5122,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 186,
-    "broker": "Maheshwari Equity Services (p) Limited",
-    "activeClients": 51,
-    "marketShare": NaN,
-    "change": 0.0,
-    "history": [
-      {
-        "month": "Apr 2026",
-        "value": 52
-      },
-      {
-        "month": "May 2026",
-        "value": 51
-      },
-      {
-        "month": "Jun 2026",
-        "value": 52
-      },
-      {
-        "month": "Jul 2026",
-        "value": 53
-      },
-      {
-        "month": "Aug 2026",
-        "value": 51
-      },
-      {
-        "month": "Sep 2026",
-        "value": 51
-      }
-    ]
-  },
-  {
-    "rank": 187,
+    "rank": 175,
     "broker": "Maheshwari Equity Services (p) Limited",
     "activeClients": 51,
     "marketShare": NaN,
@@ -5519,28 +5155,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 188,
-    "broker": "Dynamic Equities Private Limited",
-    "activeClients": 40,
-    "marketShare": NaN,
-    "change": -2.44,
-    "history": [
-      {
-        "month": "Jul 2026",
-        "value": 39
-      },
-      {
-        "month": "Aug 2026",
-        "value": 41
-      },
-      {
-        "month": "Sep 2026",
-        "value": 40
-      }
-    ]
-  },
-  {
-    "rank": 189,
+    "rank": 176,
     "broker": "Dynamic Equities Private Limited",
     "activeClients": 40,
     "marketShare": NaN,
@@ -5557,32 +5172,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 190,
-    "broker": "Shri Ram Commodities",
-    "activeClients": 36,
-    "marketShare": NaN,
-    "change": 0.0,
-    "history": [
-      {
-        "month": "Jun 2026",
-        "value": 39
-      },
-      {
-        "month": "Jul 2026",
-        "value": 37
-      },
-      {
-        "month": "Aug 2026",
-        "value": 36
-      },
-      {
-        "month": "Sep 2026",
-        "value": 36
-      }
-    ]
-  },
-  {
-    "rank": 191,
+    "rank": 177,
     "broker": "Shri Ram Commodities",
     "activeClients": 36,
     "marketShare": NaN,
@@ -5603,28 +5193,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 192,
-    "broker": "Khosla Tradewise Private Limited",
-    "activeClients": 33,
-    "marketShare": NaN,
-    "change": 0.0,
-    "history": [
-      {
-        "month": "Jul 2026",
-        "value": 33
-      },
-      {
-        "month": "Aug 2026",
-        "value": 33
-      },
-      {
-        "month": "Sep 2026",
-        "value": 33
-      }
-    ]
-  },
-  {
-    "rank": 193,
+    "rank": 178,
     "broker": "Khosla Tradewise Private Limited",
     "activeClients": 33,
     "marketShare": NaN,
@@ -5641,36 +5210,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 194,
-    "broker": "Junomoneta Finsol Private Limited",
-    "activeClients": 26,
-    "marketShare": NaN,
-    "change": 13.04,
-    "history": [
-      {
-        "month": "May 2026",
-        "value": 4
-      },
-      {
-        "month": "Jun 2026",
-        "value": 14
-      },
-      {
-        "month": "Jul 2026",
-        "value": 19
-      },
-      {
-        "month": "Aug 2026",
-        "value": 23
-      },
-      {
-        "month": "Sep 2026",
-        "value": 26
-      }
-    ]
-  },
-  {
-    "rank": 195,
+    "rank": 179,
     "broker": "Junomoneta Finsol Private Limited",
     "activeClients": 26,
     "marketShare": NaN,
@@ -5699,94 +5239,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 196,
-    "broker": "Bajaj Share & Stock Brokers Pvt. Ltd",
-    "activeClients": 20,
-    "marketShare": NaN,
-    "change": 0.0,
-    "history": [
-      {
-        "month": "May 2026",
-        "value": 21
-      },
-      {
-        "month": "Jun 2026",
-        "value": 21
-      },
-      {
-        "month": "Jul 2026",
-        "value": 21
-      },
-      {
-        "month": "Aug 2026",
-        "value": 20
-      },
-      {
-        "month": "Sep 2026",
-        "value": 20
-      }
-    ]
-  },
-  {
-    "rank": 197,
-    "broker": "Bajaj Share & Stock Brokers Pvt. Ltd",
-    "activeClients": 20,
-    "marketShare": NaN,
-    "change": 0,
-    "history": [
-      {
-        "month": "May 2026",
-        "value": 21
-      },
-      {
-        "month": "Jun 2026",
-        "value": 21
-      },
-      {
-        "month": "Jul 2026",
-        "value": 21
-      },
-      {
-        "month": "Sep 2026",
-        "value": 20
-      }
-    ]
-  },
-  {
-    "rank": 198,
-    "broker": "Share India Algoplus Private Limited",
-    "activeClients": 20,
-    "marketShare": NaN,
-    "change": 0.0,
-    "history": [
-      {
-        "month": "Apr 2026",
-        "value": 13
-      },
-      {
-        "month": "May 2026",
-        "value": 14
-      },
-      {
-        "month": "Jun 2026",
-        "value": 15
-      },
-      {
-        "month": "Jul 2026",
-        "value": 15
-      },
-      {
-        "month": "Aug 2026",
-        "value": 20
-      },
-      {
-        "month": "Sep 2026",
-        "value": 20
-      }
-    ]
-  },
-  {
-    "rank": 199,
+    "rank": 180,
     "broker": "Share India Algoplus Private Limited",
     "activeClients": 20,
     "marketShare": NaN,
@@ -5815,32 +5268,32 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 200,
-    "broker": "Kifs Broking Private Limited",
-    "activeClients": 6,
+    "rank": 181,
+    "broker": "Bajaj Share & Stock Brokers Pvt. Ltd",
+    "activeClients": 20,
     "marketShare": NaN,
-    "change": 0.0,
+    "change": 0,
     "history": [
       {
+        "month": "May 2026",
+        "value": 21
+      },
+      {
         "month": "Jun 2026",
-        "value": 5
+        "value": 21
       },
       {
         "month": "Jul 2026",
-        "value": 5
-      },
-      {
-        "month": "Aug 2026",
-        "value": 6
+        "value": 21
       },
       {
         "month": "Sep 2026",
-        "value": 6
+        "value": 20
       }
     ]
   },
   {
-    "rank": 201,
+    "rank": 182,
     "broker": "Kifs Broking Private Limited",
     "activeClients": 6,
     "marketShare": NaN,
@@ -5861,7 +5314,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 202,
+    "rank": 183,
     "broker": "Hensex Securities Private Limited",
     "activeClients": 1,
     "marketShare": NaN,
@@ -5886,7 +5339,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 203,
+    "rank": 184,
     "broker": "Icici Bank Ltd.",
     "activeClients": 1,
     "marketShare": NaN,
@@ -5919,7 +5372,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 204,
+    "rank": 185,
     "broker": "Union Bank Of India",
     "activeClients": 1,
     "marketShare": NaN,
@@ -5952,7 +5405,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 205,
+    "rank": 186,
     "broker": "Citadel Securities India Markets Private Limited",
     "activeClients": 1,
     "marketShare": NaN,
@@ -5977,7 +5430,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 206,
+    "rank": 187,
     "broker": "Finsol Securities Private Limited",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6006,7 +5459,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 207,
+    "rank": 188,
     "broker": "Punjab National Bank",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6031,7 +5484,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 208,
+    "rank": 189,
     "broker": "State Bank Of India",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6056,7 +5509,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 209,
+    "rank": 190,
     "broker": "Stockfield Financial Services Private Limited",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6077,7 +5530,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 210,
+    "rank": 191,
     "broker": "Axis Bank Ltd.",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6102,7 +5555,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 211,
+    "rank": 192,
     "broker": "Icici Bank Ltd.",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6131,7 +5584,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 212,
+    "rank": 193,
     "broker": "Union Bank Of India",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6160,7 +5613,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 213,
+    "rank": 194,
     "broker": "Citadel Securities India Markets Private Limited",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6181,7 +5634,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 214,
+    "rank": 195,
     "broker": "Finsol Securities Private Limited",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6206,7 +5659,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 215,
+    "rank": 196,
     "broker": "Axis Bank Ltd.",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6227,7 +5680,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 216,
+    "rank": 197,
     "broker": "Punjab National Bank",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6248,7 +5701,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 217,
+    "rank": 198,
     "broker": "State Bank Of India",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6269,7 +5722,7 @@ export const BROKER_LEADERBOARD = [
     ]
   },
   {
-    "rank": 218,
+    "rank": 199,
     "broker": "Stockfield Financial Services Private Limited",
     "activeClients": 1,
     "marketShare": NaN,
@@ -6293,130 +5746,130 @@ export const INDUSTRY_PARAMS = [
     "param": "Trading Days",
     "value": "21",
     "prevValue": "21",
-    "change": 0,
-    "source": "Internal calc.",
+    "change": 0.0,
+    "source": "NSE/ Sebi bulletin",
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Sep 2026",
     "history": [
       {
-        "month": "Mar 2024",
-        "value": 20
+        "month": "Apr 2024",
+        "value": 20.0
       },
       {
         "month": "May 2024",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Jun 2024",
-        "value": 19
+        "value": 19.0
       },
       {
         "month": "Jul 2024",
-        "value": 22
+        "value": 22.0
       },
       {
         "month": "Aug 2024",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Sep 2024",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Oct 2024",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Nov 2024",
-        "value": 18
+        "value": 18.0
       },
       {
         "month": "Dec 2024",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Jan 2025",
-        "value": 23
+        "value": 23.0
       },
       {
         "month": "Feb 2025",
-        "value": 19
+        "value": 19.0
       },
       {
         "month": "Mar 2025",
-        "value": 19
+        "value": 19.0
       },
       {
         "month": "Apr 2025",
-        "value": 19
+        "value": 19.0
       },
       {
         "month": "May 2025",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Jun 2025",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Jul 2025",
-        "value": 23
+        "value": 23.0
       },
       {
         "month": "Aug 2025",
-        "value": 19
+        "value": 19.0
       },
       {
         "month": "Sep 2025",
-        "value": 22
+        "value": 22.0
       },
       {
         "month": "Oct 2025",
-        "value": 20
+        "value": 20.0
       },
       {
         "month": "Nov 2025",
-        "value": 19
+        "value": 19.0
       },
       {
         "month": "Dec 2025",
-        "value": 22
+        "value": 22.0
       },
       {
         "month": "Jan 2026",
-        "value": 20
+        "value": 20.0
       },
       {
         "month": "Feb 2026",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Mar 2026",
-        "value": 19
+        "value": 19.0
       },
       {
         "month": "Apr 2026",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "May 2026",
-        "value": 19
+        "value": 19.0
       },
       {
         "month": "Jun 2026",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Jul 2026",
-        "value": 23
+        "value": 23.0
       },
       {
         "month": "Aug 2026",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Sep 2026",
-        "value": 21
+        "value": 21.0
       }
     ]
   },
@@ -6425,9 +5878,9 @@ export const INDUSTRY_PARAMS = [
     "param": "NSDL Demat Account",
     "value": "4.70 Cr",
     "prevValue": "4.70 Cr",
-    "change": 0,
-    "source": "Internal calc.",
-    "sourceUrl": "https://www.nseindia.com",
+    "change": 0.0,
+    "source": "SEBI bulletin",
+    "sourceUrl": "https://www.sebi.gov.in",
     "asOf": "Sep 2026",
     "history": [
       {
@@ -6561,9 +6014,9 @@ export const INDUSTRY_PARAMS = [
     "param": "CDSL Demat Account",
     "value": "19.30 Cr",
     "prevValue": "19.10 Cr",
-    "change": 1,
-    "source": "Internal calc.",
-    "sourceUrl": "https://www.nseindia.com",
+    "change": 1.0,
+    "source": "SEBI bulletin",
+    "sourceUrl": "https://www.sebi.gov.in",
     "asOf": "Sep 2026",
     "history": [
       {
@@ -6580,7 +6033,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Jun 2024",
-        "value": 12
+        "value": 12.0
       },
       {
         "month": "Jul 2024",
@@ -6596,7 +6049,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Oct 2024",
-        "value": 14
+        "value": 14.0
       },
       {
         "month": "Nov 2024",
@@ -6608,7 +6061,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Jan 2025",
-        "value": 15
+        "value": 15.0
       },
       {
         "month": "Feb 2025",
@@ -6648,7 +6101,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Nov 2025",
-        "value": 17
+        "value": 17.0
       },
       {
         "month": "Dec 2025",
@@ -6702,6 +6155,10 @@ export const INDUSTRY_PARAMS = [
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Sep 2026",
     "history": [
+      {
+        "month": "Mar 2024",
+        "value": 14.67
+      },
       {
         "month": "Apr 2024",
         "value": 14.98
@@ -6776,7 +6233,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Oct 2025",
-        "value": 21
+        "value": 21.0
       },
       {
         "month": "Nov 2025",
@@ -6820,7 +6277,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Sep 2026",
-        "value": 24
+        "value": 24.0
       }
     ]
   },
@@ -6829,13 +6286,13 @@ export const INDUSTRY_PARAMS = [
     "param": "New Demat Account",
     "value": "0.20",
     "prevValue": "0.40",
-    "change": -50,
-    "source": "Internal calc.",
+    "change": -50.0,
+    "source": "Difference of 2 & 3",
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Sep 2026",
     "history": [
       {
-        "month": "Mar 2024",
+        "month": "Apr 2024",
         "value": 0.3100000000000005
       },
       {
@@ -6962,8 +6419,8 @@ export const INDUSTRY_PARAMS = [
     "value": "4.61 Cr",
     "prevValue": "4.59 Cr",
     "change": 0.4,
-    "source": "Internal calc.",
-    "sourceUrl": "https://www.nseindia.com",
+    "source": "NSE",
+    "sourceUrl": "https://www.nseindia.com/invest/arbitration-status",
     "asOf": "Sep 2026",
     "history": [
       {
@@ -7097,13 +6554,13 @@ export const INDUSTRY_PARAMS = [
     "param": "NSE Unique PANs",
     "value": "13.50 Cr",
     "prevValue": "13.50 Cr",
-    "change": 0,
-    "source": "Internal calc.",
-    "sourceUrl": "https://www.nseindia.com",
+    "change": 0.0,
+    "source": "NSE Pulse",
+    "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
     "asOf": "Sep 2026",
     "history": [
       {
-        "month": "Mar 2024",
+        "month": "Apr 2024",
         "value": 9.2
       },
       {
@@ -7116,7 +6573,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Jul 2024",
-        "value": 10
+        "value": 10.0
       },
       {
         "month": "Aug 2024",
@@ -7172,7 +6629,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Sep 2025",
-        "value": 12
+        "value": 12.0
       },
       {
         "month": "Oct 2025",
@@ -7200,7 +6657,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Apr 2026",
-        "value": 13
+        "value": 13.0
       },
       {
         "month": "May 2026",
@@ -7234,6 +6691,10 @@ export const INDUSTRY_PARAMS = [
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Sep 2026",
     "history": [
+      {
+        "month": "May 2025",
+        "value": -418.36
+      },
       {
         "month": "Jun 2025",
         "value": 7488.98
@@ -7296,7 +6757,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Sep 2026",
-        "value": -44012
+        "value": -44012.0
       }
     ]
   },
@@ -7310,6 +6771,10 @@ export const INDUSTRY_PARAMS = [
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Sep 2026",
     "history": [
+      {
+        "month": "May 2025",
+        "value": 33144.78
+      },
       {
         "month": "Jun 2025",
         "value": 72673.91
@@ -7372,7 +6837,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Sep 2026",
-        "value": 76030
+        "value": 76030.0
       }
     ]
   },
@@ -7381,11 +6846,15 @@ export const INDUSTRY_PARAMS = [
     "param": "FII Volume (Future)",
     "value": "₹-20,769 Cr",
     "prevValue": "₹-12,900 Cr",
-    "change": -61,
+    "change": -61.0,
     "source": "Internal calc.",
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Sep 2026",
     "history": [
+      {
+        "month": "May 2025",
+        "value": -14543.0
+      },
       {
         "month": "Jun 2025",
         "value": -1253.75
@@ -7448,7 +6917,7 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Sep 2026",
-        "value": -20769
+        "value": -20769.0
       }
     ]
   },
@@ -7462,6 +6931,10 @@ export const INDUSTRY_PARAMS = [
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Sep 2026",
     "history": [
+      {
+        "month": "May 2025",
+        "value": -10349.3
+      },
       {
         "month": "Jun 2025",
         "value": 32161.48
@@ -7508,11 +6981,11 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "May 2026",
-        "value": -99574
+        "value": -99574.0
       },
       {
         "month": "Jun 2026",
-        "value": -24021
+        "value": -24021.0
       },
       {
         "month": "Jul 2026",
@@ -7520,11 +6993,11 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Aug 2026",
-        "value": -26904
+        "value": -26904.0
       },
       {
         "month": "Sep 2026",
-        "value": -90566
+        "value": -90566.0
       }
     ]
   },
@@ -7536,46 +7009,46 @@ export const INDUSTRY_PARAMS = [
     "change": 15.8,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 124.9
       },
       {
-        "month": "Apr 2024",
-        "value": 140
+        "month": "Jun 2024",
+        "value": 140.0
       },
       {
-        "month": "Jul 2024",
+        "month": "Sep 2024",
         "value": 153.6
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 142.7
       },
       {
-        "month": "Jan 2025",
+        "month": "Mar 2025",
         "value": 132.8
       },
       {
-        "month": "Apr 2025",
+        "month": "Jun 2025",
         "value": 147.3
       },
       {
-        "month": "Jul 2025",
+        "month": "Sep 2025",
         "value": 143.6
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 151.7
       },
       {
-        "month": "Jan 2026",
-        "value": 130
+        "month": "Mar 2026",
+        "value": 130.0
       },
       {
-        "month": "Apr 2026",
+        "month": "Jun 2026",
         "value": 150.5
       }
     ]
@@ -7588,46 +7061,46 @@ export const INDUSTRY_PARAMS = [
     "change": 8.8,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 42.7
       },
       {
-        "month": "Apr 2024",
+        "month": "Jun 2024",
         "value": 49.5
       },
       {
-        "month": "Jul 2024",
+        "month": "Sep 2024",
         "value": 49.1
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 43.5
       },
       {
-        "month": "Jan 2025",
+        "month": "Mar 2025",
         "value": 40.7
       },
       {
-        "month": "Apr 2025",
+        "month": "Jun 2025",
         "value": 46.3
       },
       {
-        "month": "Jul 2025",
+        "month": "Sep 2025",
         "value": 44.7
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 46.3
       },
       {
-        "month": "Jan 2026",
-        "value": 42
+        "month": "Mar 2026",
+        "value": 42.0
       },
       {
-        "month": "Apr 2026",
+        "month": "Jun 2026",
         "value": 45.7
       }
     ]
@@ -7640,46 +7113,46 @@ export const INDUSTRY_PARAMS = [
     "change": 20.9,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 30.6
       },
       {
-        "month": "Apr 2024",
+        "month": "Jun 2024",
         "value": 35.9
       },
       {
-        "month": "Jul 2024",
+        "month": "Sep 2024",
         "value": 38.8
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 35.7
       },
       {
-        "month": "Jan 2025",
+        "month": "Mar 2025",
         "value": 33.2
       },
       {
-        "month": "Apr 2025",
+        "month": "Jun 2025",
         "value": 37.1
       },
       {
-        "month": "Jul 2025",
+        "month": "Sep 2025",
         "value": 37.3
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 39.2
       },
       {
-        "month": "Jan 2026",
+        "month": "Mar 2026",
         "value": 34.5
       },
       {
-        "month": "Apr 2026",
+        "month": "Jun 2026",
         "value": 41.7
       }
     ]
@@ -7689,49 +7162,49 @@ export const INDUSTRY_PARAMS = [
     "param": "Passive DMFs ^",
     "value": "₹9.8 Lakh Cr",
     "prevValue": "₹9.8 Lakh Cr",
-    "change": 0,
+    "change": 0.0,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 6.3
       },
       {
-        "month": "Apr 2024",
+        "month": "Jun 2024",
         "value": 7.3
       },
       {
-        "month": "Jul 2024",
+        "month": "Sep 2024",
         "value": 8.2
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 7.8
       },
       {
-        "month": "Jan 2025",
+        "month": "Mar 2025",
         "value": 7.9
       },
       {
-        "month": "Apr 2025",
+        "month": "Jun 2025",
         "value": 8.9
       },
       {
-        "month": "Jul 2025",
+        "month": "Sep 2025",
         "value": 8.8
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 8.7
       },
       {
-        "month": "Jan 2026",
+        "month": "Mar 2026",
         "value": 9.8
       },
       {
-        "month": "Apr 2026",
+        "month": "Jun 2026",
         "value": 9.8
       }
     ]
@@ -7744,46 +7217,46 @@ export const INDUSTRY_PARAMS = [
     "change": 20.9,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 27.9
       },
       {
-        "month": "Apr 2024",
+        "month": "Jun 2024",
         "value": 32.5
       },
       {
-        "month": "Jul 2024",
+        "month": "Sep 2024",
         "value": 36.2
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 35.7
       },
       {
-        "month": "Jan 2025",
+        "month": "Mar 2025",
         "value": 34.5
       },
       {
-        "month": "Apr 2025",
+        "month": "Jun 2025",
         "value": 39.5
       },
       {
-        "month": "Jul 2025",
-        "value": 40
+        "month": "Sep 2025",
+        "value": 40.0
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 43.5
       },
       {
-        "month": "Jan 2026",
+        "month": "Mar 2026",
         "value": 36.9
       },
       {
-        "month": "Apr 2026",
+        "month": "Jun 2026",
         "value": 44.6
       }
     ]
@@ -7796,47 +7269,47 @@ export const INDUSTRY_PARAMS = [
     "change": 10.1,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 21.3
       },
       {
-        "month": "Apr 2024",
+        "month": "Jun 2024",
         "value": 23.3
       },
       {
-        "month": "Jul 2024",
+        "month": "Sep 2024",
         "value": 25.2
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 23.3
       },
       {
-        "month": "Jan 2025",
+        "month": "Mar 2025",
         "value": 22.8
       },
       {
-        "month": "Apr 2025",
-        "value": 25
+        "month": "Jun 2025",
+        "value": 25.0
       },
       {
-        "month": "Jul 2025",
+        "month": "Sep 2025",
         "value": 24.2
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 25.9
       },
       {
-        "month": "Jan 2026",
+        "month": "Mar 2026",
         "value": 22.7
       },
       {
-        "month": "Apr 2026",
-        "value": 25
+        "month": "Jun 2026",
+        "value": 25.0
       }
     ]
   },
@@ -7848,46 +7321,46 @@ export const INDUSTRY_PARAMS = [
     "change": 9.4,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 68.3
       },
       {
-        "month": "Apr 2024",
-        "value": 76
+        "month": "Jun 2024",
+        "value": 76.0
       },
       {
-        "month": "Jul 2024",
+        "month": "Sep 2024",
         "value": 82.7
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 75.8
       },
       {
-        "month": "Jan 2025",
+        "month": "Mar 2025",
         "value": 71.5
       },
       {
-        "month": "Apr 2025",
+        "month": "Jun 2025",
         "value": 79.2
       },
       {
-        "month": "Jul 2025",
+        "month": "Sep 2025",
         "value": 75.2
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 78.7
       },
       {
-        "month": "Jan 2026",
+        "month": "Mar 2026",
         "value": 64.6
       },
       {
-        "month": "Apr 2026",
+        "month": "Jun 2026",
         "value": 70.7
       }
     ]
@@ -7900,46 +7373,46 @@ export const INDUSTRY_PARAMS = [
     "change": 20.8,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 7.4
       },
       {
-        "month": "Apr 2024",
+        "month": "Jun 2024",
         "value": 8.3
       },
       {
-        "month": "Jul 2024",
+        "month": "Sep 2024",
         "value": 9.2
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 8.6
       },
       {
-        "month": "Jan 2025",
+        "month": "Mar 2025",
         "value": 7.6
       },
       {
-        "month": "Apr 2025",
+        "month": "Jun 2025",
         "value": 8.6
       },
       {
-        "month": "Jul 2025",
+        "month": "Sep 2025",
         "value": 8.3
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 8.5
       },
       {
-        "month": "Jan 2026",
+        "month": "Mar 2026",
         "value": 7.2
       },
       {
-        "month": "Apr 2026",
+        "month": "Jun 2026",
         "value": 8.7
       }
     ]
@@ -7952,46 +7425,46 @@ export const INDUSTRY_PARAMS = [
     "change": 19.3,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 36.4
       },
       {
-        "month": "Apr 2024",
+        "month": "Jun 2024",
         "value": 41.6
       },
       {
-        "month": "Jul 2024",
-        "value": 45
+        "month": "Sep 2024",
+        "value": 45.0
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 42.8
       },
       {
-        "month": "Jan 2025",
+        "month": "Mar 2025",
         "value": 38.9
       },
       {
-        "month": "Apr 2025",
+        "month": "Jun 2025",
         "value": 43.9
       },
       {
-        "month": "Jul 2025",
+        "month": "Sep 2025",
         "value": 42.7
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 43.9
       },
       {
-        "month": "Jan 2026",
+        "month": "Mar 2026",
         "value": 37.4
       },
       {
-        "month": "Apr 2026",
+        "month": "Jun 2026",
         "value": 44.6
       }
     ]
@@ -8004,46 +7477,46 @@ export const INDUSTRY_PARAMS = [
     "change": 17.4,
     "source": "NSE Pulse",
     "sourceUrl": "https://www.nseindia.com/research/publications-reports-nse-pulse",
-    "asOf": "Apr 2026",
+    "asOf": "Jun 2026",
     "history": [
       {
         "month": "Mar 2024",
         "value": 16.3
       },
       {
-        "month": "Apr 2024",
+        "month": "Jun 2024",
         "value": 18.1
       },
       {
-        "month": "Jul 2024",
+        "month": "Sep 2024",
         "value": 20.3
       },
       {
-        "month": "Oct 2024",
+        "month": "Dec 2024",
         "value": 20.6
       },
       {
-        "month": "Jan 2025",
-        "value": 19
+        "month": "Mar 2025",
+        "value": 19.0
       },
       {
-        "month": "Apr 2025",
+        "month": "Jun 2025",
         "value": 21.3
       },
       {
-        "month": "Jul 2025",
+        "month": "Sep 2025",
         "value": 21.4
       },
       {
-        "month": "Oct 2025",
+        "month": "Dec 2025",
         "value": 24.4
       },
       {
-        "month": "Jan 2026",
+        "month": "Mar 2026",
         "value": 23.5
       },
       {
-        "month": "Apr 2026",
+        "month": "Jun 2026",
         "value": 27.6
       }
     ]
@@ -8059,12 +7532,12 @@ export const INDUSTRY_PARAMS = [
     "asOf": "Sep 2026",
     "history": [
       {
-        "month": "Mar 2024",
-        "value": 2272963
+        "month": "Apr 2024",
+        "value": 2272963.0
       },
       {
         "month": "May 2024",
-        "value": 2637533
+        "value": 2637533.0
       },
       {
         "month": "Jun 2024",
@@ -8072,15 +7545,15 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Jul 2024",
-        "value": 3296724
+        "value": 3296724.0
       },
       {
         "month": "Aug 2024",
-        "value": 2847505
+        "value": 2847505.0
       },
       {
         "month": "Sep 2024",
-        "value": 2740058
+        "value": 2740058.0
       },
       {
         "month": "Oct 2024",
@@ -8136,35 +7609,35 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Nov 2025",
-        "value": 2144576
+        "value": 2144576.0
       },
       {
         "month": "Dec 2025",
-        "value": 2234350
+        "value": 2234350.0
       },
       {
         "month": "Jan 2026",
-        "value": 2572255
+        "value": 2572255.0
       },
       {
         "month": "Feb 2026",
-        "value": 2590130
+        "value": 2590130.0
       },
       {
         "month": "Mar 2026",
-        "value": 2556340
+        "value": 2556340.0
       },
       {
         "month": "Apr 2026",
-        "value": 2880643
+        "value": 2880643.0
       },
       {
         "month": "May 2026",
-        "value": 2892432
+        "value": 2892432.0
       },
       {
         "month": "Jun 2026",
-        "value": 2981166
+        "value": 2981166.0
       },
       {
         "month": "Jul 2026",
@@ -8172,11 +7645,11 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Aug 2026",
-        "value": 2735711
+        "value": 2735711.0
       },
       {
         "month": "Sep 2026",
-        "value": 2644322
+        "value": 2644322.0
       }
     ]
   },
@@ -8185,13 +7658,13 @@ export const INDUSTRY_PARAMS = [
     "param": "F&O Volume (Premium)",
     "value": "₹1,562,802 Cr",
     "prevValue": "₹1,281,099 Cr",
-    "change": 22,
+    "change": 22.0,
     "source": "SEBI bulletin",
     "sourceUrl": "https://www.sebi.gov.in",
     "asOf": "Sep 2026",
     "history": [
       {
-        "month": "Mar 2024",
+        "month": "Apr 2024",
         "value": 1357932.3270949388
       },
       {
@@ -8288,15 +7761,15 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Apr 2026",
-        "value": 1952650
+        "value": 1952650.0
       },
       {
         "month": "May 2026",
-        "value": 1841809
+        "value": 1841809.0
       },
       {
         "month": "Jun 2026",
-        "value": 1843968
+        "value": 1843968.0
       },
       {
         "month": "Jul 2026",
@@ -8304,11 +7777,11 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Aug 2026",
-        "value": 1281099
+        "value": 1281099.0
       },
       {
         "month": "Sep 2026",
-        "value": 1562802
+        "value": 1562802.0
       }
     ]
   },
@@ -8323,7 +7796,7 @@ export const INDUSTRY_PARAMS = [
     "asOf": "Sep 2026",
     "history": [
       {
-        "month": "Mar 2024",
+        "month": "Apr 2024",
         "value": 3630895.3270949386
       },
       {
@@ -8420,15 +7893,15 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Apr 2026",
-        "value": 4833293
+        "value": 4833293.0
       },
       {
         "month": "May 2026",
-        "value": 4734241
+        "value": 4734241.0
       },
       {
         "month": "Jun 2026",
-        "value": 4825134
+        "value": 4825134.0
       },
       {
         "month": "Jul 2026",
@@ -8436,11 +7909,11 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Aug 2026",
-        "value": 4016810
+        "value": 4016810.0
       },
       {
         "month": "Sep 2026",
-        "value": 4207124
+        "value": 4207124.0
       }
     ]
   },
@@ -8455,12 +7928,12 @@ export const INDUSTRY_PARAMS = [
     "asOf": "Sep 2026",
     "history": [
       {
-        "month": "Mar 2024",
-        "value": 890509321
+        "month": "Apr 2024",
+        "value": 890509321.0
       },
       {
         "month": "May 2024",
-        "value": 950404475
+        "value": 950404475.0
       },
       {
         "month": "Jun 2024",
@@ -8468,15 +7941,15 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Jul 2024",
-        "value": 1092333547
+        "value": 1092333547.0
       },
       {
         "month": "Aug 2024",
-        "value": 1052876552
+        "value": 1052876552.0
       },
       {
         "month": "Sep 2024",
-        "value": 1128239527
+        "value": 1128239527.0
       },
       {
         "month": "Oct 2024",
@@ -8548,19 +8021,19 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Mar 2026",
-        "value": 981170210
+        "value": 981170210.0
       },
       {
         "month": "Apr 2026",
-        "value": 971593594
+        "value": 971593594.0
       },
       {
         "month": "May 2026",
-        "value": 2474142294
+        "value": 2474142294.0
       },
       {
         "month": "Jun 2026",
-        "value": 1030149659
+        "value": 1030149659.0
       },
       {
         "month": "Jul 2026",
@@ -8587,12 +8060,12 @@ export const INDUSTRY_PARAMS = [
     "asOf": "Sep 2026",
     "history": [
       {
-        "month": "Mar 2024",
-        "value": 892782284
+        "month": "Apr 2024",
+        "value": 892782284.0
       },
       {
         "month": "May 2024",
-        "value": 953042008
+        "value": 953042008.0
       },
       {
         "month": "Jun 2024",
@@ -8600,15 +8073,15 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Jul 2024",
-        "value": 1095630271
+        "value": 1095630271.0
       },
       {
         "month": "Aug 2024",
-        "value": 1055724057
+        "value": 1055724057.0
       },
       {
         "month": "Sep 2024",
-        "value": 1130979585
+        "value": 1130979585.0
       },
       {
         "month": "Oct 2024",
@@ -8680,19 +8153,19 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Mar 2026",
-        "value": 983726550
+        "value": 983726550.0
       },
       {
         "month": "Apr 2026",
-        "value": 974474237
+        "value": 974474237.0
       },
       {
         "month": "May 2026",
-        "value": 2477034726
+        "value": 2477034726.0
       },
       {
         "month": "Jun 2026",
-        "value": 1033130825
+        "value": 1033130825.0
       },
       {
         "month": "Jul 2026",
@@ -8714,125 +8187,125 @@ export const INDUSTRY_PARAMS = [
     "value": "₹7,579 Cr",
     "prevValue": "₹6,582 Cr",
     "change": 15.1,
-    "source": "Internal calc.",
-    "sourceUrl": "https://www.nseindia.com",
+    "source": "BSE",
+    "sourceUrl": "https://www.bseindia.com/markets/equity/eqreports/grossdel",
     "asOf": "Sep 2026",
     "history": [
       {
-        "month": "Mar 2024",
-        "value": 2972
+        "month": "Apr 2024",
+        "value": 2972.0
       },
       {
         "month": "May 2024",
-        "value": 2965
+        "value": 2965.0
       },
       {
         "month": "Jun 2024",
-        "value": 2945
+        "value": 2945.0
       },
       {
         "month": "Jul 2024",
-        "value": 2950
+        "value": 2950.0
       },
       {
         "month": "Aug 2024",
-        "value": 3391
+        "value": 3391.0
       },
       {
         "month": "Sep 2024",
-        "value": 3374
+        "value": 3374.0
       },
       {
         "month": "Oct 2024",
-        "value": 3075
+        "value": 3075.0
       },
       {
         "month": "Nov 2024",
-        "value": 3094
+        "value": 3094.0
       },
       {
         "month": "Dec 2024",
-        "value": 3670
+        "value": 3670.0
       },
       {
         "month": "Jan 2025",
-        "value": 3445
+        "value": 3445.0
       },
       {
         "month": "Feb 2025",
-        "value": 3259
+        "value": 3259.0
       },
       {
         "month": "Mar 2025",
-        "value": 2993
+        "value": 2993.0
       },
       {
         "month": "Apr 2025",
-        "value": 2905
+        "value": 2905.0
       },
       {
         "month": "May 2025",
-        "value": 3096
+        "value": 3096.0
       },
       {
         "month": "Jun 2025",
-        "value": 3258
+        "value": 3258.0
       },
       {
         "month": "Jul 2025",
-        "value": 3829
+        "value": 3829.0
       },
       {
         "month": "Aug 2025",
-        "value": 4285
+        "value": 4285.0
       },
       {
         "month": "Sep 2025",
-        "value": 4588
+        "value": 4588.0
       },
       {
         "month": "Oct 2025",
-        "value": 3234
+        "value": 3234.0
       },
       {
         "month": "Nov 2025",
-        "value": 3409
+        "value": 3409.0
       },
       {
         "month": "Dec 2025",
-        "value": 3535
+        "value": 3535.0
       },
       {
         "month": "Jan 2026",
-        "value": 3845
+        "value": 3845.0
       },
       {
         "month": "Feb 2026",
-        "value": 3896
+        "value": 3896.0
       },
       {
         "month": "Mar 2026",
-        "value": 3865
+        "value": 3865.0
       },
       {
         "month": "Apr 2026",
-        "value": 4142
+        "value": 4142.0
       },
       {
         "month": "Jun 2026",
-        "value": 5700
+        "value": 5700.0
       },
       {
         "month": "Jul 2026",
-        "value": 6070
+        "value": 6070.0
       },
       {
         "month": "Aug 2026",
-        "value": 6582
+        "value": 6582.0
       },
       {
         "month": "Sep 2026",
-        "value": 7579
+        "value": 7579.0
       }
     ]
   },
@@ -8842,17 +8315,17 @@ export const INDUSTRY_PARAMS = [
     "value": "₹145,924 Cr",
     "prevValue": "₹136,592 Cr",
     "change": 6.8,
-    "source": "Internal calc.",
-    "sourceUrl": "https://www.nseindia.com",
+    "source": "NSE",
+    "sourceUrl": "https://www.nseindia.com/all-reports",
     "asOf": "Aug 2026",
     "history": [
       {
-        "month": "Mar 2024",
-        "value": 64000
+        "month": "Apr 2024",
+        "value": 64000.0
       },
       {
         "month": "May 2024",
-        "value": 66000
+        "value": 66000.0
       },
       {
         "month": "Jun 2024",
@@ -8860,35 +8333,35 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Jul 2024",
-        "value": 74000
+        "value": 74000.0
       },
       {
         "month": "Aug 2024",
-        "value": 69000
+        "value": 69000.0
       },
       {
         "month": "Sep 2024",
-        "value": 82000
+        "value": 82000.0
       },
       {
         "month": "Oct 2024",
-        "value": 76000
+        "value": 76000.0
       },
       {
         "month": "Nov 2024",
-        "value": 77000
+        "value": 77000.0
       },
       {
         "month": "Dec 2024",
-        "value": 82000
+        "value": 82000.0
       },
       {
         "month": "Jan 2025",
-        "value": 78000
+        "value": 78000.0
       },
       {
         "month": "Feb 2025",
-        "value": 71000
+        "value": 71000.0
       },
       {
         "month": "Mar 2025",
@@ -8896,67 +8369,67 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Apr 2025",
-        "value": 69000
+        "value": 69000.0
       },
       {
         "month": "May 2025",
-        "value": 79000
+        "value": 79000.0
       },
       {
         "month": "Jun 2025",
-        "value": 84000
+        "value": 84000.0
       },
       {
         "month": "Jul 2025",
-        "value": 91000
+        "value": 91000.0
       },
       {
         "month": "Aug 2025",
-        "value": 93000
+        "value": 93000.0
       },
       {
         "month": "Sep 2025",
-        "value": 99000
+        "value": 99000.0
       },
       {
         "month": "Oct 2025",
-        "value": 109000
+        "value": 109000.0
       },
       {
         "month": "Nov 2025",
-        "value": 112000
+        "value": 112000.0
       },
       {
         "month": "Dec 2025",
-        "value": 113000
+        "value": 113000.0
       },
       {
         "month": "Jan 2026",
-        "value": 117000
+        "value": 117000.0
       },
       {
         "month": "Feb 2026",
-        "value": 115000
+        "value": 115000.0
       },
       {
         "month": "Mar 2026",
-        "value": 109000
+        "value": 109000.0
       },
       {
         "month": "Apr 2026",
-        "value": 116000
+        "value": 116000.0
       },
       {
         "month": "Jun 2026",
-        "value": 135044
+        "value": 135044.0
       },
       {
         "month": "Jul 2026",
-        "value": 136592
+        "value": 136592.0
       },
       {
         "month": "Aug 2026",
-        "value": 145924
+        "value": 145924.0
       }
     ]
   },
@@ -8965,14 +8438,18 @@ export const INDUSTRY_PARAMS = [
     "param": "Total MTF book",
     "value": "₹7,579 Cr",
     "prevValue": "₹152,506 Cr",
-    "change": -95,
+    "change": -95.0,
     "source": "Internal calc.",
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Sep 2026",
     "history": [
       {
+        "month": "Apr 2024",
+        "value": 66972.0
+      },
+      {
         "month": "May 2024",
-        "value": 68965
+        "value": 68965.0
       },
       {
         "month": "Jun 2024",
@@ -8980,35 +8457,35 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Jul 2024",
-        "value": 76950
+        "value": 76950.0
       },
       {
         "month": "Aug 2024",
-        "value": 72391
+        "value": 72391.0
       },
       {
         "month": "Sep 2024",
-        "value": 85374
+        "value": 85374.0
       },
       {
         "month": "Oct 2024",
-        "value": 79075
+        "value": 79075.0
       },
       {
         "month": "Nov 2024",
-        "value": 80094
+        "value": 80094.0
       },
       {
         "month": "Dec 2024",
-        "value": 85670
+        "value": 85670.0
       },
       {
         "month": "Jan 2025",
-        "value": 81445
+        "value": 81445.0
       },
       {
         "month": "Feb 2025",
-        "value": 74259
+        "value": 74259.0
       },
       {
         "month": "Mar 2025",
@@ -9016,71 +8493,71 @@ export const INDUSTRY_PARAMS = [
       },
       {
         "month": "Apr 2025",
-        "value": 71905
+        "value": 71905.0
       },
       {
         "month": "May 2025",
-        "value": 82096
+        "value": 82096.0
       },
       {
         "month": "Jun 2025",
-        "value": 87258
+        "value": 87258.0
       },
       {
         "month": "Jul 2025",
-        "value": 94829
+        "value": 94829.0
       },
       {
         "month": "Aug 2025",
-        "value": 97285
+        "value": 97285.0
       },
       {
         "month": "Sep 2025",
-        "value": 103588
+        "value": 103588.0
       },
       {
         "month": "Oct 2025",
-        "value": 112234
+        "value": 112234.0
       },
       {
         "month": "Nov 2025",
-        "value": 115409
+        "value": 115409.0
       },
       {
         "month": "Dec 2025",
-        "value": 116535
+        "value": 116535.0
       },
       {
         "month": "Jan 2026",
-        "value": 120845
+        "value": 120845.0
       },
       {
         "month": "Feb 2026",
-        "value": 118896
+        "value": 118896.0
       },
       {
         "month": "Mar 2026",
-        "value": 112865
+        "value": 112865.0
       },
       {
         "month": "Apr 2026",
-        "value": 120142
+        "value": 120142.0
       },
       {
         "month": "Jun 2026",
-        "value": 140744
+        "value": 140744.0
       },
       {
         "month": "Jul 2026",
-        "value": 142662
+        "value": 142662.0
       },
       {
         "month": "Aug 2026",
-        "value": 152506
+        "value": 152506.0
       },
       {
         "month": "Sep 2026",
-        "value": 7579
+        "value": 7579.0
       }
     ]
   },
@@ -9090,85 +8567,89 @@ export const INDUSTRY_PARAMS = [
     "value": "₹94,793 Cr",
     "prevValue": "₹78,616 Cr",
     "change": 20.6,
-    "source": "136631",
+    "source": "Internal calc.",
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Jan 2026",
     "history": [
       {
+        "month": "Jun 2024",
+        "value": 136631.0
+      },
+      {
         "month": "Jul 2024",
-        "value": 134670
+        "value": 134670.0
       },
       {
         "month": "Aug 2024",
-        "value": 114007
+        "value": 114007.0
       },
       {
         "month": "Sep 2024",
-        "value": 108586
+        "value": 108586.0
       },
       {
         "month": "Oct 2024",
-        "value": 42300
+        "value": 42300.0
       },
       {
         "month": "Nov 2024",
-        "value": 85746
+        "value": 85746.0
       },
       {
         "month": "Dec 2024",
-        "value": 93697
+        "value": 93697.0
       },
       {
         "month": "Jan 2025",
-        "value": 82127
+        "value": 82127.0
       },
       {
         "month": "Feb 2025",
-        "value": 73217
+        "value": 73217.0
       },
       {
         "month": "Mar 2025",
-        "value": 80877
+        "value": 80877.0
       },
       {
         "month": "Apr 2025",
-        "value": 82944
+        "value": 82944.0
       },
       {
         "month": "May 2025",
-        "value": 99607
+        "value": 99607.0
       },
       {
         "month": "Jun 2025",
-        "value": 98730
+        "value": 98730.0
       },
       {
         "month": "Jul 2025",
-        "value": 82448
+        "value": 82448.0
       },
       {
         "month": "Aug 2025",
-        "value": 74977
+        "value": 74977.0
       },
       {
         "month": "Sep 2025",
-        "value": 82413
+        "value": 82413.0
       },
       {
         "month": "Oct 2025",
-        "value": 83874
+        "value": 83874.0
       },
       {
         "month": "Nov 2025",
-        "value": 83369
+        "value": 83369.0
       },
       {
         "month": "Dec 2025",
-        "value": 78616
+        "value": 78616.0
       },
       {
         "month": "Jan 2026",
-        "value": 94793
+        "value": 94793.0
       }
     ]
   },
@@ -9178,85 +8659,89 @@ export const INDUSTRY_PARAMS = [
     "value": "₹99,972 Cr",
     "prevValue": "₹81,644 Cr",
     "change": 22.4,
-    "source": "165637",
+    "source": "Internal calc.",
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Jan 2026",
     "history": [
       {
+        "month": "Jun 2024",
+        "value": 165637.0
+      },
+      {
         "month": "Jul 2024",
-        "value": 141439
+        "value": 141439.0
       },
       {
         "month": "Aug 2024",
-        "value": 127179
+        "value": 127179.0
       },
       {
         "month": "Sep 2024",
-        "value": 122984
+        "value": 122984.0
       },
       {
         "month": "Oct 2024",
-        "value": 119563
+        "value": 119563.0
       },
       {
         "month": "Nov 2024",
-        "value": 106108
+        "value": 106108.0
       },
       {
         "month": "Dec 2024",
-        "value": 96370
+        "value": 96370.0
       },
       {
         "month": "Jan 2025",
-        "value": 94560
+        "value": 94560.0
       },
       {
         "month": "Feb 2025",
-        "value": 89340
+        "value": 89340.0
       },
       {
         "month": "Mar 2025",
-        "value": 89828
+        "value": 89828.0
       },
       {
         "month": "Apr 2025",
-        "value": 103801
+        "value": 103801.0
       },
       {
         "month": "May 2025",
-        "value": 101867
+        "value": 101867.0
       },
       {
         "month": "Jun 2025",
-        "value": 95742
+        "value": 95742.0
       },
       {
         "month": "Jul 2025",
-        "value": 82337
+        "value": 82337.0
       },
       {
         "month": "Aug 2025",
-        "value": 82079
+        "value": 82079.0
       },
       {
         "month": "Sep 2025",
-        "value": 80410
+        "value": 80410.0
       },
       {
         "month": "Oct 2025",
-        "value": 92865
+        "value": 92865.0
       },
       {
         "month": "Nov 2025",
-        "value": 93662
+        "value": 93662.0
       },
       {
         "month": "Dec 2025",
-        "value": 81644
+        "value": 81644.0
       },
       {
         "month": "Jan 2026",
-        "value": 99972
+        "value": 99972.0
       }
     ]
   },
@@ -9266,89 +8751,94 @@ export const INDUSTRY_PARAMS = [
     "value": "₹55,758 Cr",
     "prevValue": "₹43,267 Cr",
     "change": 28.9,
-    "source": "72110",
+    "source": "Internal calc.",
     "sourceUrl": "https://www.nseindia.com",
     "asOf": "Jan 2026",
     "history": [
       {
+        "month": "Jun 2024",
+        "value": 72110.0
+      },
+      {
         "month": "Jul 2024",
-        "value": 56793
+        "value": 56793.0
       },
       {
         "month": "Aug 2024",
-        "value": 55542
+        "value": 55542.0
       },
       {
         "month": "Sep 2024",
-        "value": 52304
+        "value": 52304.0
       },
       {
         "month": "Oct 2024",
-        "value": 61022
+        "value": 61022.0
       },
       {
         "month": "Nov 2024",
-        "value": 49657
+        "value": 49657.0
       },
       {
         "month": "Dec 2024",
-        "value": 43117
+        "value": 43117.0
       },
       {
         "month": "Jan 2025",
-        "value": 43189
+        "value": 43189.0
       },
       {
         "month": "Feb 2025",
-        "value": 38618
+        "value": 38618.0
       },
       {
         "month": "Mar 2025",
-        "value": 41255
+        "value": 41255.0
       },
       {
         "month": "Apr 2025",
-        "value": 44761
+        "value": 44761.0
       },
       {
         "month": "May 2025",
-        "value": 47412
+        "value": 47412.0
       },
       {
         "month": "Jun 2025",
-        "value": 39614
+        "value": 39614.0
       },
       {
         "month": "Jul 2025",
-        "value": 36830
+        "value": 36830.0
       },
       {
         "month": "Aug 2025",
-        "value": 40506
+        "value": 40506.0
       },
       {
         "month": "Sep 2025",
-        "value": 42026
+        "value": 42026.0
       },
       {
         "month": "Oct 2025",
-        "value": 48317
+        "value": 48317.0
       },
       {
         "month": "Nov 2025",
-        "value": 47832
+        "value": 47832.0
       },
       {
         "month": "Dec 2025",
-        "value": 43267
+        "value": 43267.0
       },
       {
         "month": "Jan 2026",
-        "value": 55758
+        "value": 55758.0
       }
     ]
   }
 ];
+
 export const NEWS_ITEMS = [
   {
     id: 1,
@@ -9406,7 +8896,7 @@ export const MF_SIF_DATA = {
         },
         {
           "month": "Sep 2024",
-          "value": 68
+          "value": 68.0
         },
         {
           "month": "Oct 2024",
@@ -9446,7 +8936,7 @@ export const MF_SIF_DATA = {
         },
         {
           "month": "Jul 2025",
-          "value": 77
+          "value": 77.0
         },
         {
           "month": "Aug 2025",
@@ -9511,6 +9001,10 @@ export const MF_SIF_DATA = {
       "value": "₹38.89 Lakh Cr",
       "change": -0.9,
       "history": [
+        {
+          "month": "Mar 2024",
+          "value": 23.53
+        },
         {
           "month": "Apr 2024",
           "value": 24.78
@@ -9639,132 +9133,140 @@ export const MF_SIF_DATA = {
       "change": 0.5,
       "history": [
         {
+          "month": "Mar 2024",
+          "value": 1541.0
+        },
+        {
           "month": "Apr 2024",
-          "value": 1545
+          "value": 1545.0
         },
         {
           "month": "May 2024",
-          "value": 1552
+          "value": 1552.0
         },
         {
           "month": "Jun 2024",
-          "value": 1566
+          "value": 1566.0
         },
         {
           "month": "Jul 2024",
-          "value": 1581
+          "value": 1581.0
         },
         {
           "month": "Aug 2024",
-          "value": 1599
+          "value": 1599.0
         },
         {
           "month": "Sep 2024",
-          "value": 1623
+          "value": 1623.0
         },
         {
           "month": "Oct 2024",
-          "value": 1651
+          "value": 1651.0
         },
         {
           "month": "Nov 2024",
-          "value": 1666
+          "value": 1666.0
         },
         {
           "month": "Dec 2024",
-          "value": 1700
+          "value": 1700.0
         },
         {
           "month": "Jan 2025",
-          "value": 1711
+          "value": 1711.0
         },
         {
           "month": "Feb 2025",
-          "value": 1739
+          "value": 1739.0
         },
         {
           "month": "Mar 2025",
-          "value": 1760
+          "value": 1760.0
         },
         {
           "month": "Apr 2025",
-          "value": 1758
+          "value": 1758.0
         },
         {
           "month": "May 2025",
-          "value": 1774
+          "value": 1774.0
         },
         {
           "month": "Jun 2025",
-          "value": 1791
+          "value": 1791.0
         },
         {
           "month": "Jul 2025",
-          "value": 1819
+          "value": 1819.0
         },
         {
           "month": "Aug 2025",
-          "value": 1843
+          "value": 1843.0
         },
         {
           "month": "Sep 2025",
-          "value": 1849
+          "value": 1849.0
         },
         {
           "month": "Oct 2025",
-          "value": 1865
+          "value": 1865.0
         },
         {
           "month": "Nov 2025",
-          "value": 1886
+          "value": 1886.0
         },
         {
           "month": "Dec 2025",
-          "value": 1908
+          "value": 1908.0
         },
         {
           "month": "Jan 2026",
-          "value": 1919
+          "value": 1919.0
         },
         {
           "month": "Feb 2026",
-          "value": 1937
+          "value": 1937.0
         },
         {
           "month": "Mar 2026",
-          "value": 1958
+          "value": 1958.0
         },
         {
           "month": "Apr 2026",
-          "value": 1941
+          "value": 1941.0
         },
         {
           "month": "May 2026",
-          "value": 1946
+          "value": 1946.0
         },
         {
           "month": "Jun 2026",
-          "value": 1945
+          "value": 1945.0
         },
         {
           "month": "Jul 2026",
-          "value": 1963
+          "value": 1963.0
         },
         {
           "month": "Aug 2026",
-          "value": 1985
+          "value": 1985.0
         },
         {
           "month": "Sep 2026",
-          "value": 1995
+          "value": 1995.0
         }
       ]
     },
     {
       "label": "MF Folios",
       "value": "28.62 Cr",
-      "change": 1,
+      "change": 1.0,
       "history": [
+        {
+          "month": "Mar 2024",
+          "value": 17.78
+        },
         {
           "month": "Apr 2024",
           "value": 18.146
@@ -9897,11 +9399,11 @@ export const MF_SIF_DATA = {
           "value": 1005.29
         },
         {
-          "month": "May 2024",
+          "month": "Apr 2025",
           "value": 1044.84
         },
         {
-          "month": "May 2025",
+          "month": "Apr 2026",
           "value": 1044.26
         },
         {
@@ -9918,7 +9420,7 @@ export const MF_SIF_DATA = {
         },
         {
           "month": "Aug 2026",
-          "value": 1075
+          "value": 1075.0
         },
         {
           "month": "Sep 2026",
@@ -9932,99 +9434,107 @@ export const MF_SIF_DATA = {
       "change": 24.6,
       "history": [
         {
+          "month": "Oct 2025",
+          "value": 10212.0
+        },
+        {
           "month": "Nov 2025",
-          "value": 14712
+          "value": 14712.0
         },
         {
           "month": "Dec 2025",
-          "value": 20779
+          "value": 20779.0
         },
         {
           "month": "Jan 2026",
-          "value": 24372
+          "value": 24372.0
         },
         {
           "month": "Feb 2026",
-          "value": 39851
+          "value": 39851.0
         },
         {
           "month": "Mar 2026",
-          "value": 44573
+          "value": 44573.0
         },
         {
           "month": "Apr 2026",
-          "value": 50096
+          "value": 50096.0
         },
         {
           "month": "May 2026",
-          "value": 56749
+          "value": 56749.0
         },
         {
           "month": "Jun 2026",
-          "value": 75032
+          "value": 75032.0
         },
         {
           "month": "Jul 2026",
-          "value": 94447
+          "value": 94447.0
         },
         {
           "month": "Aug 2026",
-          "value": 125539
+          "value": 125539.0
         },
         {
           "month": "Sep 2026",
-          "value": 156483
+          "value": 156483.0
         }
       ]
     },
     {
       "label": "SIF Schemes",
       "value": "34",
-      "change": 3,
+      "change": 3.0,
       "history": [
         {
+          "month": "Oct 2025",
+          "value": 4.0
+        },
+        {
           "month": "Nov 2025",
-          "value": 5
+          "value": 5.0
         },
         {
           "month": "Dec 2025",
-          "value": 7
+          "value": 7.0
         },
         {
           "month": "Jan 2026",
-          "value": 8
+          "value": 8.0
         },
         {
           "month": "Feb 2026",
-          "value": 11
+          "value": 11.0
         },
         {
           "month": "Mar 2026",
-          "value": 14
+          "value": 14.0
         },
         {
           "month": "Apr 2026",
-          "value": 16
+          "value": 16.0
         },
         {
           "month": "May 2026",
-          "value": 21
+          "value": 21.0
         },
         {
           "month": "Jun 2026",
-          "value": 27
+          "value": 27.0
         },
         {
           "month": "Jul 2026",
-          "value": 30
+          "value": 30.0
         },
         {
           "month": "Aug 2026",
-          "value": 33
+          "value": 33.0
         },
         {
           "month": "Sep 2026",
-          "value": 34
+          "value": 34.0
         }
       ]
     },
@@ -10034,7 +9544,7 @@ export const MF_SIF_DATA = {
       "change": -5.1,
       "history": [
         {
-          "month": "Apr 2024",
+          "month": "Sep 2025",
           "value": 14.47
         },
         {
@@ -10092,6 +9602,10 @@ export const MF_SIF_DATA = {
       "value": "₹66.94 Lakh Cr",
       "change": -5.1,
       "history": [
+        {
+          "month": "Sep 2025",
+          "value": 61.14
+        },
         {
           "month": "Oct 2025",
           "value": 64.69
