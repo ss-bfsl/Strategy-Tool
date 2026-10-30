@@ -45,7 +45,7 @@ jobs:
         run: pip install pandas openpyxl
 
       - name: Generate frontend data from Excel
-        if: hashFiles('*.xlsx') != ''
+    if: hashFiles('Industry data.xlsx') != ''
         run: python scripts/generate_data.py
 
       - name: Generate news data
