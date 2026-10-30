@@ -46,7 +46,7 @@ jobs:
 
       - name: Generate frontend data from Excel
     if: hashFiles('Industry data.xlsx') != ''
-        run: python scripts/generate_data.py
+        run: python scripts/generate_data.py "Industry data.xlsx"
 
       - name: Generate news data
         run: python scripts/generate_news.py
