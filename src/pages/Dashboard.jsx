@@ -69,7 +69,7 @@ export default function Dashboard() {
   }, [brokers.data]);
 
   const demat = useMemo(() => {
-    const rows = (industry.data ?? []).filter((p) => /demat account/i.test(p.param));
+    const rows = (industry.data ?? []).filter((p) => /demat account/i.test(p.param) && /\b(NSDL|CDSL)\b/i.test(p.param));
     if (!rows.length) return null;
     const values = rows.map((row) => Number(String(row.value).replace(/[^\d.]/g, ''))).filter(Number.isFinite);
     const unit = rows[0].value.match(/(Cr|Lakh Cr)/)?.[1] ?? '';
