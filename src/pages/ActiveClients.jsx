@@ -27,7 +27,11 @@ export default function ActiveClients() {
   }, [data, sortKey, sortDirection, query]);
 
   const ranked = useMemo(() => (data ?? []).filter((broker) => broker.broker.toLowerCase() !== 'others').sort((a, b) => a.rank - b.rank), [data]);
-  const totalClients = ranked.reduce((sum, broker) => sum + Number(broker.activeClients || 0), 0);
+  // Match the dashboard's reported total by including the aggregate Others row.
+  // Others stays excluded from the named broker ranking below.
+  const totalClients = (data ?? [])
+    .filter((broker) => broker.broker?.toLowerCase() !== 'total')
+    .reduce((sum, broker) => sum + Number(broker.activeClients || 0), 0);
   const topThreeShare = ranked.slice(0, 3).reduce((sum, broker) => sum + Number(broker.marketShare || 0), 0);
 
   const toggleSort = (key) => {
@@ -58,7 +62,7 @@ export default function ActiveClients() {
 
       <div className="page-metrics">
         <div className="page-metric panel"><span><Users size={15} /> Reporting members</span><strong>{ranked.length.toLocaleString('en-IN')}</strong><small>excluding the aggregate Others row</small></div>
-        <div className="page-metric panel"><span><TrendingUp size={15} /> Active clients</span><strong>{totalClients.toLocaleString('en-IN')}</strong><small>total across named members</small></div>
+        <div className="page-metric panel"><span><TrendingUp size={15} /> Active clients</span><strong>{totalClients.toLocaleString('en-IN')}</strong><small>reported total, including Others</small></div>
         <div className="page-metric panel"><span><Trophy size={15} /> Top 3 share</span><strong>{topThreeShare.toFixed(2)}%</strong><small>of the reported market</small></div>
       </div>
 
