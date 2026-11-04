@@ -457,7 +457,30 @@ global_keywords:
   - "partnership"
   - "collaboration"
 
+recent_days: 3
+
+industry_topics:
+  - name: "Fintech, IPOs & regulation"
+    query: '(fintech OR payments OR wealthtech OR brokerage OR broker OR securities) (IPO OR listing OR SEBI OR regulation OR acquisition OR funding OR approval)'
+    required_keyword_groups:
+      - ["fintech", "payments", "wealthtech", "broker", "brokerage", "securities", "stock market", "trading platform", "investment platform"]
+      - ["IPO", "listing", "SEBI", "regulation", "acquisition", "funding", "approval"]
+
 companies:
+  - name: "Razorpay"
+    news_context_keywords:
+      - "payments"
+      - "fintech"
+      - "IPO"
+    news_keywords:
+      - "IPO"
+      - "SEBI"
+      - "listing"
+      - "funding"
+      - "revenue"
+      - "acquisition"
+      - "partnership"
+
   - name: "Zerodha"
     blog_rss: "https://zerodha.com/z-connect/feed/"
     blog_keywords:

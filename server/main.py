@@ -236,15 +236,36 @@ def build_source_list(config):
             "excluded_keywords": excluded_keywords,
         })
 
+    # Broad industry searches catch relevant developments outside the broker
+    # watchlist (for example fintech IPOs and capital-markets regulation).
+    for topic in config.get("industry_topics", []):
+        sources.append({
+            "name": f"Industry: {topic['name']}",
+            "url": google_news_url(topic["query"]),
+            "required_keyword_groups": topic.get("required_keyword_groups", []),
+            "excluded_keywords": excluded_keywords,
+        })
+
     return sources
 
 
-def matches_keywords(entry, keywords, required_keywords=None, excluded_keywords=None):
+def matches_keywords(
+    entry,
+    keywords,
+    required_keywords=None,
+    excluded_keywords=None,
+    required_keyword_groups=None,
+):
     text = f"{entry.get('title', '')} {entry.get('summary', '')}".lower()
     if is_excluded(entry, excluded_keywords):
         return False
     if required_keywords and not any(
         phrase.lower() in text for phrase in required_keywords
+    ):
+        return False
+    if required_keyword_groups and not all(
+        any(phrase.lower() in text for phrase in group)
+        for group in required_keyword_groups
     ):
         return False
     if not keywords:
@@ -288,6 +309,7 @@ def fetch_new_items(seen_posts, sources, recent_days=1):
         url = source["url"]
         keywords = source.get("keywords", [])
         required_keywords = source.get("required_keywords", [])
+        required_keyword_groups = source.get("required_keyword_groups", [])
         excluded_keywords = source.get("excluded_keywords", [])
         try:
             feed = feedparser.parse(url)
@@ -321,6 +343,7 @@ def fetch_new_items(seen_posts, sources, recent_days=1):
                 keywords,
                 required_keywords,
                 excluded_keywords,
+                required_keyword_groups,
             ):
                 mark_seen(seen_posts, post_id, name, title, link, published_at)
                 new_items.append(
