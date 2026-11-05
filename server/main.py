@@ -98,15 +98,63 @@ def similar_title(first_title, second_title):
     return len(shared_tokens) >= 4 and smaller_title and len(shared_tokens) / smaller_title >= 0.60
 
 
-def is_duplicate(seen_posts, post_id, title, link):
+def story_cluster_key(title):
+    """Group syndicated coverage of the same named company and event."""
+    text = normalize_title(title)
+    entities = (
+        "razorpay", "zerodha", "sahi", "groww", "upstox", "angel one",
+        "dhan", "paytm money", "5paisa", "nuvama", "anand rathi",
+        "hdfc securities", "icici securities", "bajaj financial securities", "bajaj broking",
+    )
+    entity = next((name for name in entities if name in text), None)
+    if not entity:
+        return None
+
+    event_patterns = {
+        "ipo": ("ipo", "public issue", "listing", "draft papers", "sebi nod"),
+        "regulatory-action": ("penalty", "show cause", "sebi action", "regulatory action"),
+        "tax-policy": ("ltcg", "stt", "capital gains tax", "tax proposal", "tax rule"),
+        "acquisition": ("acquisition", "acquires", "to acquire", "merger"),
+        "funding": ("funding", "fundraise", "funding round", "raises $", "raises rs"),
+        "financial-results": ("quarterly results", "financial results", "profit", "revenue"),
+        "product-launch": ("launches", "launch", "rolls out", "introduces", "new platform"),
+    }
+    event = next(
+        (key for key, phrases in event_patterns.items() if any(phrase in text for phrase in phrases)),
+        None,
+    )
+    return f"{entity}:{event}" if event else None
+
+
+def within_duplicate_window(first_timestamp, second_timestamp):
+    try:
+        first = datetime.fromisoformat(first_timestamp)
+        second = datetime.fromisoformat(second_timestamp)
+    except (TypeError, ValueError):
+        return False
+    if first.tzinfo is None:
+        first = first.replace(tzinfo=timezone.utc)
+    if second.tzinfo is None:
+        second = second.replace(tzinfo=timezone.utc)
+    return abs((first - second).total_seconds()) <= 3 * 24 * 60 * 60
+
+
+def is_duplicate(seen_posts, post_id, title, link, published_at=None):
     if is_seen(seen_posts, post_id):
         return True
 
     normalized_title = normalize_title(title)
+    cluster_key = story_cluster_key(title)
     return any(
         (link and item.get("link") == link)
         or normalize_title(item.get("title", "")) == normalized_title
-        or similar_title(title, item.get("title", ""))
+        or (
+            within_duplicate_window(published_at, item.get("published_at"))
+            and (
+                (cluster_key and (item.get("cluster_key") or story_cluster_key(item.get("title", ""))) == cluster_key)
+                or similar_title(title, item.get("title", ""))
+            )
+        )
         for item in seen_posts.values()
     )
 
@@ -119,6 +167,7 @@ def deduplicate_seen_posts(seen_posts):
             post_id,
             item.get("title", ""),
             item.get("link", ""),
+            item.get("published_at"),
         ):
             unique_posts[post_id] = item
     return unique_posts
@@ -160,7 +209,7 @@ def remove_invalid_seen_posts(seen_posts, sources):
     }
 
 
-def mark_seen(seen_posts, post_id, source, title, link, published_at):
+def mark_seen(seen_posts, post_id, source, title, link, published_at, category=None, company=None):
     seen_posts.setdefault(
         post_id,
         {
@@ -170,6 +219,9 @@ def mark_seen(seen_posts, post_id, source, title, link, published_at):
             "published_at": published_at,
             "seen_at": datetime.now(timezone.utc).isoformat(),
             "eligible": True,
+            "category": category,
+            "company": company,
+            "cluster_key": story_cluster_key(title),
         },
     )
 
@@ -204,6 +256,8 @@ def build_source_list(config):
                 "url": company["blog_rss"],
                 "keywords": company.get("blog_keywords", []),
                 "excluded_keywords": excluded_keywords,
+                "category": company.get("news_category", "competition"),
+                "company": name,
             })
 
         sources.append({
@@ -220,6 +274,8 @@ def build_source_list(config):
             "keywords": company.get("news_keywords", []),
             "required_keywords": company.get("news_context_keywords", []),
             "excluded_keywords": excluded_keywords,
+            "category": company.get("news_category", "competition"),
+            "company": name,
         })
 
     for person in config.get("people", []):
@@ -234,6 +290,8 @@ def build_source_list(config):
             "keywords": global_keywords,  # backup local filter, in case Google's
                                            # own query matching is loose
             "excluded_keywords": excluded_keywords,
+            "category": "competition",
+            "company": company or name,
         })
 
     # Broad industry searches catch relevant developments outside the broker
@@ -244,6 +302,8 @@ def build_source_list(config):
             "url": google_news_url(topic["query"]),
             "required_keyword_groups": topic.get("required_keyword_groups", []),
             "excluded_keywords": excluded_keywords,
+            "category": topic.get("category", "markets"),
+            "company": None,
         })
 
     return sources
@@ -332,7 +392,7 @@ def fetch_new_items(seen_posts, sources, recent_days=1):
                 tz=timezone.utc,
             ).isoformat()
             post_id = make_id(name, entry)
-            if is_duplicate(seen_posts, post_id, title, link):
+            if is_duplicate(seen_posts, post_id, title, link, published_at):
                 continue
 
             if is_excluded(entry, excluded_keywords):
@@ -345,13 +405,18 @@ def fetch_new_items(seen_posts, sources, recent_days=1):
                 excluded_keywords,
                 required_keyword_groups,
             ):
-                mark_seen(seen_posts, post_id, name, title, link, published_at)
+                category = source.get("category", "competition")
+                company = source.get("company")
+                mark_seen(seen_posts, post_id, name, title, link, published_at, category, company)
                 new_items.append(
                     {
                         "source": name,
                         "title": title,
                         "link": link,
                         "summary": (entry.get("summary", "") or "")[:400],
+                        "category": category,
+                        "company": company,
+                        "cluster_key": story_cluster_key(title),
                     }
                 )
     return new_items
@@ -463,8 +528,13 @@ async def handle_websocket(websocket):
     
     try:
         # Send initial data when client connects
-        seen_posts = load_seen_posts()
-        recent_days = load_config().get("recent_days", 1)
+        config = load_config()
+        sources = build_source_list(config)
+        seen_posts = remove_invalid_seen_posts(
+            remove_inactive_sources(load_seen_posts(), sources),
+            sources,
+        )
+        recent_days = config.get("recent_days", 1)
         items = sorted(
             (
                 item for item in seen_posts.values()
@@ -475,7 +545,7 @@ async def handle_websocket(websocket):
         )
         await websocket.send(json.dumps({
             "type": "initial",
-            "items": items[:50]  # Send last 50 items
+            "items": items[:100]  # Send the latest three days of coverage
         }))
         
         # Keep connection open
@@ -548,14 +618,19 @@ async def start_websocket_server():
 
             config = load_config()
             recent_days = config.get("recent_days", 1)
+            sources = build_source_list(config)
+            seen_posts = remove_invalid_seen_posts(
+                remove_inactive_sources(load_seen_posts(), sources),
+                sources,
+            )
             items = sorted(
                 (
-                    item for item in load_seen_posts().values()
+                    item for item in seen_posts.values()
                     if is_recent_timestamp(item.get("published_at"), recent_days)
                 ),
                 key=lambda item: item.get("seen_at", ""),
                 reverse=True,
-            )[:50]
+            )[:100]
             payload = json.dumps({"items": items}).encode("utf-8")
 
             self.send_response(200)

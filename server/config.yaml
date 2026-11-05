@@ -326,7 +326,7 @@
 #     company: "FYERS"
 #   - name: "Ashish Kehair"
 #     company: "Nuvama Wealth"
-recent_days: 1
+recent_days: 3
 
 excluded_keywords:
   # --- Brokerage & Analyst Calls ---
@@ -457,17 +457,24 @@ global_keywords:
   - "partnership"
   - "collaboration"
 
-recent_days: 3
-
 industry_topics:
-  - name: "Fintech, IPOs & regulation"
-    query: '(fintech OR payments OR wealthtech OR brokerage OR broker OR securities) (IPO OR listing OR SEBI OR regulation OR acquisition OR funding OR approval)'
+  - name: "Markets & regulation"
+    category: "markets"
+    query: '(SEBI OR NSE OR BSE OR "Indian markets" OR "stock brokers" OR brokerage OR demat OR F&O) (India OR Indian OR tax OR LTCG OR STT OR proposal OR regulation OR circular OR penalty OR derivatives)'
     required_keyword_groups:
-      - ["fintech", "payments", "wealthtech", "broker", "brokerage", "securities", "stock market", "trading platform", "investment platform"]
-      - ["IPO", "listing", "SEBI", "regulation", "acquisition", "funding", "approval"]
+      - ["India", "Indian", "SEBI", "NSE", "BSE", "HDFC Securities", "stock broker", "brokerage", "demat", "F&O", "STT", "LTCG"]
+      - ["tax", "LTCG", "STT", "proposal", "regulation", "circular", "penalty", "derivatives", "market", "broker", "trading"]
+  - name: "India fintech & adjacent platforms"
+    category: "fintech"
+    query: '(fintech OR payments OR wealthtech OR "investment platform" OR "digital investing") (India OR Indian OR SEBI OR Razorpay OR Paytm OR PhonePe OR GIFT City) (IPO OR listing OR regulation OR acquisition OR funding OR launch OR partnership)'
+    required_keyword_groups:
+      - ["fintech", "payments", "wealthtech", "investment platform", "digital investing"]
+      - ["India", "Indian", "SEBI", "Razorpay", "Paytm", "PhonePe", "GIFT City"]
+      - ["IPO", "listing", "regulation", "acquisition", "funding", "launch", "partnership", "approval"]
 
 companies:
   - name: "Razorpay"
+    news_category: "fintech"
     news_context_keywords:
       - "payments"
       - "fintech"
@@ -885,6 +892,7 @@ companies:
       - "SEBI"
 
   - name: "Bajaj Financial Securities Ltd."
+    news_category: "bfsl"
     news_context_keywords:
       - "broker"
       - "broking"
