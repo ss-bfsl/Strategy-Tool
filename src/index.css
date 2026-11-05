@@ -415,6 +415,32 @@ button {
 .category-tab.active { box-shadow: 0 0 0 3px #e0a94e14; }
 .news-story .tag { color: var(--mint-pop); border-color: #8bd7b52b; background: #8bd7b50a; }
 .news-story-title:focus-visible { outline: 2px solid var(--violet-pop); outline-offset: 3px; border-radius: 2px; }
+.news-controls { display: grid; gap: 12px; margin: 0 0 16px; }
+.news-category-tabs { display: flex; gap: 7px; overflow-x: auto; padding: 2px 2px 5px; scrollbar-width: thin; }
+.news-category-tab { display: inline-flex; min-height: 38px; align-items: center; gap: 9px; flex: 0 0 auto; padding: 0 12px; color: var(--text-dim); border: 1px solid var(--steel-soft); border-radius: 4px; background: var(--panel); font: inherit; font-size: 12px; cursor: pointer; }
+.news-category-tab:hover { color: var(--text); border-color: #46516a; }
+.news-category-tab.active { color: var(--text); border-color: #d5a45180; background: #d5a45112; }
+.news-category-tab span { color: var(--text-faint); font: 11px var(--font-mono); }
+.news-filter-fields { display: flex; gap: 10px; align-items: center; }
+.news-company-filter { display: flex; align-items: center; gap: 9px; color: var(--text-dim); font-size: 12px; }
+.news-company-filter select, .news-search { min-height: 38px; color: var(--text); border: 1px solid var(--steel-soft); border-radius: 4px; background: var(--panel); }
+.news-company-filter select { min-width: 190px; padding: 0 30px 0 10px; font: inherit; font-size: 12px; }
+.news-search { display: flex; min-width: 230px; align-items: center; gap: 8px; padding: 0 10px; color: var(--text-faint); }
+.news-search:focus-within, .news-company-filter select:focus-visible { border-color: var(--amber); outline: 2px solid #d5a45130; outline-offset: 1px; }
+.news-search input { width: 100%; color: var(--text); border: 0; outline: 0; background: transparent; font: inherit; font-size: 12px; }
+.news-search input::placeholder { color: var(--text-faint); }
+.news-story-labels { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.news-story .news-category-label { color: #d5a451; border-color: #d5a45138; background: #d5a4510c; }
+.news-story .news-category-label.markets { color: #a999ff; border-color: #a999ff38; background: #a999ff0c; }
+.news-story .news-category-label.fintech { color: #8bd7b5; border-color: #8bd7b538; background: #8bd7b50c; }
+.news-company-label { color: var(--text-dim); font-size: 11px; font-weight: 600; }
+.news-coverage-note { margin: -1px 0 8px; color: var(--text-faint); font-size: 11px; }
+@media (max-width: 640px) {
+  .news-filter-fields { align-items: stretch; flex-direction: column; }
+  .news-company-filter { align-items: flex-start; flex-direction: column; }
+  .news-company-filter select, .news-search { width: 100%; min-width: 0; }
+  .news-category-tab { min-height: 42px; }
+}
 @keyframes page-enter { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes card-enter { from { opacity: 0; transform: translateY(7px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes icon-glow { 0%, 100% { box-shadow: 0 0 0 0 #a999ff00; } 50% { box-shadow: 0 0 18px 1px #a999ff16; } }
