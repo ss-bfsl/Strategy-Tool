@@ -102,7 +102,7 @@ export const COMPETITION_DATA = {
             "Groww": 0.2871747785269643,
             "Angel One": 0.17334230299665063,
             "Zerodha": 0.229756189147869,
-            "Bajaj Broking": 0.12004503837150732,
+            "Bajaj Broking": 0.14,
             "Motilal": 0.12245087582952102,
             "ICICI Sec": 0.29242371481049045,
             "HDFC Sec": 0.2678357436305801,
@@ -126,51 +126,17 @@ export const COMPETITION_DATA = {
       ],
       "revenueMix": [
         {
-          "label": "Equity Derivatives (F&O)",
+          "label": "Broking & Other Allied Income",
           "format": "percent",
           "values": {
-            "Groww": 0.5512,
-            "Angel One": 0.455,
-            "Zerodha": 0.367,
-            "Bajaj Broking": 0.0305
-          }
-        },
-        {
-          "label": "Broking",
-          "format": "percent",
-          "values": {
-            "Motilal": 0.15912603524401842,
-            "ICICI Sec": 0.282,
-            "HDFC Sec": 0.325386235390576,
-            "Kotak Sec": 0.44
-          }
-        },
-        {
-          "label": "Stocks (Cash)",
-          "format": "percent",
-          "values": {
-            "Groww": 0.1778,
-            "Angel One": 0.0825,
-            "Zerodha": null,
-            "Bajaj Broking": 0.0797,
-            "Motilal": 0.17236108577029652,
-            "ICICI Sec": null,
-            "HDFC Sec": null,
-            "Kotak Sec": null
-          }
-        },
-        {
-          "label": "Commodity Derivatives",
-          "format": "percent",
-          "values": {
-            "Groww": 0.0233,
-            "Angel One": 0.06,
-            "Zerodha": null,
-            "Bajaj Broking": null,
-            "Motilal": 0.05549623780410634,
-            "ICICI Sec": null,
-            "HDFC Sec": null,
-            "Kotak Sec": null
+            "Groww": 0.8175000000000001,
+            "Angel One": 0.763115141955836,
+            "Zerodha": 0.42702143622722405,
+            "Bajaj Broking": 0.8200000000000001,
+            "Motilal": 0.6076377555464376,
+            "ICICI Sec": 0.546,
+            "HDFC Sec": 0.6332,
+            "Kotak Sec": 0.7
           }
         },
         {
@@ -188,12 +154,200 @@ export const COMPETITION_DATA = {
           }
         },
         {
+          "label": "Treasury/Interest Income",
+          "format": "percent",
+          "values": {
+            "Groww": 0.1143,
+            "Angel One": 0.15358832807570977,
+            "Zerodha": 0.3039924973204716,
+            "Bajaj Broking": 0.1011,
+            "Motilal": 0.10777096114519427,
+            "ICICI Sec": 0.198,
+            "HDFC Sec": 0.18821600244361203,
+            "Kotak Sec": 0.21
+          }
+        },
+        {
+          "label": "Others",
+          "format": "percent",
+          "values": {
+            "Groww": 0.06819999999999993,
+            "Angel One": 0.046296529968454236,
+            "Zerodha": 0.2689860664523043,
+            "Bajaj Broking": 0.0709,
+            "Motilal": 0.09470638091314176,
+            "ICICI Sec": 0.06923644266358786,
+            "HDFC Sec": 0.021999909972187814,
+            "Kotak Sec": 0.09000000000000008
+          }
+        },
+        {
+          "label": "Other / not specified",
+          "format": "percent",
+          "values": {
+            "Groww": 1501.0,
+            "Angel One": 1400.7,
+            "Zerodha": null,
+            "Bajaj Broking": 1069.63,
+            "Motilal": 4890.0,
+            "ICICI Sec": 5889.8,
+            "HDFC Sec": 3110.15,
+            "Kotak Sec": 5461.4937
+          }
+        },
+        {
+          "label": "Other / not specified",
+          "format": "percent",
+          "values": {
+            "Groww": 725.0,
+            "Angel One": 366.7,
+            "Zerodha": null,
+            "Bajaj Broking": 202.57,
+            "Motilal": 922.51,
+            "ICICI Sec": 1713.1,
+            "HDFC Sec": 929.994,
+            "Kotak Sec": 1664.0
+          }
+        },
+        {
+          "label": "Other / not specified",
+          "format": "percent",
+          "values": {
+            "Groww": 9651.4,
+            "Angel One": 6148.9,
+            "Zerodha": null,
+            "Bajaj Broking": 1288.93,
+            "Motilal": 7116.87,
+            "ICICI Sec": 5422.0599999999995,
+            "HDFC Sec": 3348.59,
+            "Kotak Sec": 10008.683299999999
+          }
+        },
+        {
+          "label": "closing net worth",
+          "format": "percent",
+          "values": {
+            "Groww": 11658.0,
+            "Angel One": 6712.4,
+            "Zerodha": null,
+            "Bajaj Broking": 2085.97,
+            "Motilal": 7950.56,
+            "ICICI Sec": 6294.5,
+            "HDFC Sec": 3595.92,
+            "Kotak Sec": 11614.4
+          }
+        },
+        {
+          "label": "Other / not specified",
+          "format": "percent",
+          "values": {
+            "Groww": 10654.7,
+            "Angel One": 6430.65,
+            "Zerodha": null,
+            "Bajaj Broking": 1687.45,
+            "Motilal": 7533.715,
+            "ICICI Sec": 5858.28,
+            "HDFC Sec": 3472.255,
+            "Kotak Sec": 10811.54165
+          }
+        },
+        {
+          "label": "Other / not specified",
+          "format": "percent",
+          "values": {
+            "Groww": 0.06804508808319333,
+            "Angel One": 0.05702378453189025,
+            "Zerodha": null,
+            "Bajaj Broking": 0.12004503837150732,
+            "Motilal": 0.12245087582952102,
+            "ICICI Sec": 0.29242371481049045,
+            "HDFC Sec": 0.2678357436305801,
+            "Kotak Sec": 0.15390959530734455
+          }
+        },
+        {
+          "label": "Other / not specified",
+          "format": "percent",
+          "values": {
+            "Groww": 4351.0,
+            "Angel One": 8211.8,
+            "Zerodha": null,
+            "Bajaj Broking": 7985.0,
+            "Motilal": 5767.36,
+            "ICICI Sec": 14561.34,
+            "HDFC Sec": 7132.66,
+            "Kotak Sec": 13363.15
+          }
+        },
+        {
+          "label": "Equity Derivatives (F&O)",
+          "format": "percent",
+          "values": {
+            "Groww": 0.448,
+            "Angel One": 0.387,
+            "Zerodha": null,
+            "Bajaj Broking": 0.0305
+          }
+        },
+        {
+          "label": "Broking",
+          "format": "percent",
+          "values": {
+            "Motilal": 0.0,
+            "ICICI Sec": 0.282,
+            "HDFC Sec": 0.325386235390576,
+            "Kotak Sec": 0.44
+          }
+        },
+        {
+          "label": "Stocks (Cash)",
+          "format": "percent",
+          "values": {
+            "Groww": 0.174,
+            "Angel One": 0.087,
+            "Zerodha": null,
+            "Bajaj Broking": 0.0797,
+            "Motilal": 0.0,
+            "ICICI Sec": null,
+            "HDFC Sec": null,
+            "Kotak Sec": null
+          }
+        },
+        {
+          "label": "Commodity Derivatives",
+          "format": "percent",
+          "values": {
+            "Groww": 0.062,
+            "Angel One": 0.071,
+            "Zerodha": null,
+            "Bajaj Broking": null,
+            "Motilal": 0.0,
+            "ICICI Sec": null,
+            "HDFC Sec": null,
+            "Kotak Sec": null
+          }
+        },
+        {
+          "label": "Distribution/Services",
+          "format": "percent",
+          "values": {
+            "Groww": null,
+            "Angel One": 0.048,
+            "Zerodha": null,
+            "Bajaj Broking": null,
+            "Motilal": 0.0,
+            "ICICI Sec": 0.1867635573364121,
+            "HDFC Sec": 0.15658408758420012,
+            "Kotak Sec": null
+          }
+        },
+        {
           "label": "MTF",
           "format": "percent",
           "values": {
-            "Groww": 0.0652,
-            "Angel One": 0.16561514195583596,
-            "Zerodha": 0.06002143622722401,
+            "Groww": 0.101,
+            "Angel One": 0.356,
+            "Zerodha": null,
             "Bajaj Broking": 0.679
           }
         },
@@ -201,7 +355,7 @@ export const COMPETITION_DATA = {
           "label": "MTF/Loan Interest",
           "format": "percent",
           "values": {
-            "Motilal": 0.16012269938650306,
+            "Motilal": 0.0,
             "ICICI Sec": 0.264,
             "HDFC Sec": 0.29341028567753963,
             "Kotak Sec": 0.26
@@ -215,7 +369,7 @@ export const COMPETITION_DATA = {
             "Angel One": null,
             "Zerodha": null,
             "Bajaj Broking": 0.0308,
-            "Motilal": 0.06053169734151329,
+            "Motilal": 0.0,
             "ICICI Sec": null,
             "HDFC Sec": 0.014468755526260792,
             "Kotak Sec": null
@@ -225,11 +379,11 @@ export const COMPETITION_DATA = {
           "label": "Treasury/Interest Income",
           "format": "percent",
           "values": {
-            "Groww": 0.1143,
-            "Angel One": 0.15358832807570977,
-            "Zerodha": 0.3039924973204716,
+            "Groww": 0.143,
+            "Angel One": null,
+            "Zerodha": null,
             "Bajaj Broking": 0.1011,
-            "Motilal": 0.10777096114519427,
+            "Motilal": 0.0,
             "ICICI Sec": 0.198,
             "HDFC Sec": 0.17374724691735124,
             "Kotak Sec": 0.21
@@ -239,11 +393,11 @@ export const COMPETITION_DATA = {
           "label": "Others",
           "format": "percent",
           "values": {
-            "Groww": 0.0661,
-            "Angel One": 0.04629652996845435,
-            "Zerodha": 0.2689860664523044,
+            "Groww": 0.07200000000000006,
+            "Angel One": 0.051000000000000045,
+            "Zerodha": null,
             "Bajaj Broking": 0.0709,
-            "Motilal": 0.09470638091314176,
+            "Motilal": 1.0,
             "ICICI Sec": 0.06923644266358786,
             "HDFC Sec": 0.03640338890407224,
             "Kotak Sec": 0.09
