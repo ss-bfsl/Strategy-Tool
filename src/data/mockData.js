@@ -4,7 +4,7 @@
 // workbook and re-run the script instead.
 //
 // Regenerate with:
-//   python scripts/generate_data.py path/to/Industry_Data_.xlsx
+//   python scripts/generate_data.py "Industry data - Updated.xlsx"
 
 export const BROKER_LEADERBOARD = [
   {
@@ -9667,8 +9667,8 @@ export const MF_SIF_DATA = {
   "headline": [
     {
       "label": "Total AUM",
-      "value": "₹82.64 Lakh Cr",
-      "change": -5.1,
+      "value": "₹83.39 Lakh Cr",
+      "change": 0.9,
       "history": [
         {
           "month": "Mar 2024",
@@ -9793,13 +9793,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Sep 2026",
           "value": 82.64
+        },
+        {
+          "month": "Oct 2026",
+          "value": 83.38999999999999
         }
       ]
     },
     {
       "label": "Equity AUM",
-      "value": "₹38.89 Lakh Cr",
-      "change": -0.9,
+      "value": "₹37.18 Lakh Cr",
+      "change": -4.4,
       "history": [
         {
           "month": "Mar 2024",
@@ -9924,13 +9928,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Sep 2026",
           "value": 38.89
+        },
+        {
+          "month": "Oct 2026",
+          "value": 37.18
         }
       ]
     },
     {
       "label": "MF Schemes",
-      "value": "1,995",
-      "change": 0.5,
+      "value": "2,015",
+      "change": 1.0,
       "history": [
         {
           "month": "Mar 2024",
@@ -10055,13 +10063,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Sep 2026",
           "value": 1995.0
+        },
+        {
+          "month": "Oct 2026",
+          "value": 2015.0
         }
       ]
     },
     {
       "label": "MF Folios",
-      "value": "28.62 Cr",
-      "change": 1.0,
+      "value": "28.78 Cr",
+      "change": 0.6,
       "history": [
         {
           "month": "Mar 2024",
@@ -10186,13 +10198,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Sep 2026",
           "value": 28.62
+        },
+        {
+          "month": "Oct 2026",
+          "value": 28.78
         }
       ]
     },
     {
       "label": "SIP Accounts",
       "value": "10.89 Cr",
-      "change": 1.3,
+      "change": 0.0,
       "history": [
         {
           "month": "Apr 2024",
@@ -10225,13 +10241,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Sep 2026",
           "value": 1088.9
+        },
+        {
+          "month": "Oct 2026",
+          "value": 1088.9
         }
       ]
     },
     {
       "label": "SIF Folios",
-      "value": "156,483",
-      "change": 24.6,
+      "value": "176,542",
+      "change": 12.8,
       "history": [
         {
           "month": "Oct 2025",
@@ -10280,13 +10300,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Sep 2026",
           "value": 156483.0
+        },
+        {
+          "month": "Oct 2026",
+          "value": 176542.0
         }
       ]
     },
     {
       "label": "SIF Schemes",
-      "value": "34",
-      "change": 3.0,
+      "value": "37",
+      "change": 8.8,
       "history": [
         {
           "month": "Oct 2025",
@@ -10335,13 +10359,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Sep 2026",
           "value": 34.0
+        },
+        {
+          "month": "Oct 2026",
+          "value": 37.0
         }
       ]
     },
     {
       "label": "B30 Contribution",
-      "value": "₹16.10 Lakh Cr",
-      "change": -3.8,
+      "value": "₹15.93 Lakh Cr",
+      "change": -1.1,
       "history": [
         {
           "month": "Sep 2025",
@@ -10394,13 +10422,17 @@ export const MF_SIF_DATA = {
         {
           "month": "Sep 2026",
           "value": 16.1
+        },
+        {
+          "month": "Oct 2026",
+          "value": 15.93
         }
       ]
     },
     {
       "label": "T30 Contribution",
-      "value": "₹66.55 Lakh Cr",
-      "change": -5.4,
+      "value": "₹67.46 Lakh Cr",
+      "change": 1.4,
       "history": [
         {
           "month": "Sep 2025",
@@ -10453,6 +10485,10 @@ export const MF_SIF_DATA = {
         {
           "month": "Sep 2026",
           "value": 66.55
+        },
+        {
+          "month": "Oct 2026",
+          "value": 67.46
         }
       ]
     }

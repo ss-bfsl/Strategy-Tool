@@ -4,7 +4,7 @@ Regenerates src/data/mockData.js from your monthly Excel workbook.
 
 USAGE (from the project root):
     python scripts/generate_data.py
-    python scripts/generate_data.py path/to/Industry_Data_.xlsx
+    python scripts/generate_data.py "Industry data - Updated.xlsx"
 
 What it does each run:
   1. Reads the "NSE active client data" sheet -> BROKER_LEADERBOARD
@@ -31,12 +31,13 @@ import pandas as pd
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 DEFAULT_OUTPUT = PROJECT_ROOT / "src" / "data" / "mockData.js"
+DEFAULT_EXCEL = PROJECT_ROOT / "Industry data - Updated.xlsx"
 
 
 # ────────────────────────────── helpers ──────────────────────────────
 
 def is_valid(v):
-    if v is None or (isinstance(v, float) and pd.isna(v)):
+    if v is None or pd.isna(v):
         return False
     if isinstance(v, str) and v.strip() in ("-", "", "NA"):
         return False
@@ -474,7 +475,7 @@ def write_mock_data(output_path, brokers, industry, mf_sif):
 // workbook and re-run the script instead.
 //
 // Regenerate with:
-//   python scripts/generate_data.py path/to/Industry_Data_.xlsx
+//   python scripts/generate_data.py "Industry data - Updated.xlsx"
 
 export const BROKER_LEADERBOARD = {to_js(brokers)};
 
@@ -504,7 +505,7 @@ def main():
     parser.add_argument(
         "excel_path",
         nargs="?",
-        help="Path to the monthly Industry_Data_.xlsx workbook; defaults to the only .xlsx file in the project root",
+        help=f"Path to the monthly industry workbook (default: {DEFAULT_EXCEL})",
     )
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT),
                          help=f"Where to write mockData.js (default: {DEFAULT_OUTPUT})")
@@ -513,16 +514,7 @@ def main():
     if args.excel_path:
         excel_path = Path(args.excel_path)
     else:
-        workbooks = sorted(PROJECT_ROOT.glob("*.xlsx"))
-        if len(workbooks) != 1:
-            if not workbooks:
-                print(f"[ERROR] No .xlsx workbook found in {PROJECT_ROOT}", file=sys.stderr)
-            else:
-                print("[ERROR] More than one .xlsx workbook found. Pass the file path explicitly:", file=sys.stderr)
-                for workbook in workbooks:
-                    print(f"        {workbook}", file=sys.stderr)
-            sys.exit(1)
-        excel_path = workbooks[0]
+        excel_path = DEFAULT_EXCEL
 
     if not excel_path.exists():
         print(f"[ERROR] File not found: {excel_path}", file=sys.stderr)
