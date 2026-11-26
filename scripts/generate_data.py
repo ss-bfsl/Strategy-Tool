@@ -325,6 +325,8 @@ def competition_period(sheet_name, df):
 
 
 def competition_number(value):
+    if isinstance(value, str) and value.strip().upper() == "NA":
+        return "NA"
     if not is_valid(value):
         return None
     return to_num(value)
@@ -334,6 +336,7 @@ def build_competition_data(xl):
     """Read competition comparison tabs, including the workbook's historical 'Competiton' spelling."""
     output = []
     known_labels = {"total revenue", "pat", "roe", "mtf book", "networth", "avg networth"}
+    financial_labels = {"total revenue", "pat", "avg networth", "roe", "mtf book"}
 
     for sheet_name in xl.sheet_names:
         normalized_name = re.sub(r"[^a-z]", "", sheet_name.lower())
@@ -352,7 +355,7 @@ def build_competition_data(xl):
             continue
 
         period = competition_period(sheet_name, df)
-        if not period:
+        if period != "FY26":
             continue
 
         companies = [{
@@ -378,13 +381,14 @@ def build_competition_data(xl):
         for data_index in range(financial_header + 1, financial_end):
             left_label = df.iat[data_index, 1] if df.shape[1] > 1 else None
             label = str(left_label).strip() if isinstance(left_label, str) and left_label.strip() else str(df.iat[data_index, 0]).strip() if isinstance(df.iat[data_index, 0], str) else ""
-            if not label or label.lower() in {"revenue mix", "na", "-"}:
+            if not label or label.lower() not in financial_labels:
                 continue
             values = {name: competition_number(df.iat[data_index, col]) if col < df.shape[1] else None for name, col, _ in COMPANY_COLUMNS}
             if any(value is not None for value in values.values()):
                 metrics.append({
                     "label": re.sub(r"\s+", " ", label),
                     "format": "percent" if "roe" in label.lower() else "currency" if label.lower() in {"total revenue", "pat", "opening networth", "closing net worth", "avg networth", "mtf book", "networth"} else "number",
+                    "decimalPlaces": 2 if label.lower() == "roe" else 1,
                     "values": values,
                 })
 
@@ -397,6 +401,8 @@ def build_competition_data(xl):
         header_row = revenue_header
         if header_row is not None:
             for row_index in range(header_row + 1, df.shape[0]):
+                if all(not is_valid(value) for value in df.iloc[row_index, :12].tolist()):
+                    break
                 left_raw = df.iat[row_index, 1] if df.shape[1] > 1 else None
                 right_raw = df.iat[row_index, 7] if df.shape[1] > 7 else None
                 left_label = str(left_raw).strip() if isinstance(left_raw, str) and left_raw.strip().lower() not in {"na", "-"} else ""
@@ -405,21 +411,17 @@ def build_competition_data(xl):
                 right_values = {name: competition_number(df.iat[row_index, col]) if col < df.shape[1] else None for name, col, group in COMPANY_COLUMNS if group == "traditional"}
                 if not any(value is not None for value in [*left_values.values(), *right_values.values()]):
                     continue
-                if not left_label and any(value is not None for value in left_values.values()):
-                    left_label = "Other / not specified"
-                if not right_label and any(value is not None for value in right_values.values()) and not left_label:
-                    right_label = "Other / not specified"
                 if not left_label and not right_label:
-                    left_label = "Other / not specified"
+                    continue
                 if left_label and (not right_label or left_label.lower() == right_label.lower()):
-                    revenue_mix.append({"label": left_label, "format": "percent", "values": {**left_values, **right_values}})
+                    revenue_mix.append({"label": left_label, "format": "percent", "decimalPlaces": 1, "values": {**left_values, **right_values}})
                 elif right_label and not left_label:
-                    revenue_mix.append({"label": right_label, "format": "percent", "values": {**left_values, **right_values}})
+                    revenue_mix.append({"label": right_label, "format": "percent", "decimalPlaces": 1, "values": {**left_values, **right_values}})
                 else:
                     if left_label:
-                        revenue_mix.append({"label": left_label, "format": "percent", "values": left_values})
+                        revenue_mix.append({"label": left_label, "format": "percent", "decimalPlaces": 1, "values": left_values})
                     if right_label:
-                        revenue_mix.append({"label": right_label, "format": "percent", "values": right_values})
+                        revenue_mix.append({"label": right_label, "format": "percent", "decimalPlaces": 1, "values": right_values})
 
         output.append({
             "id": period,
@@ -432,7 +434,9 @@ def build_competition_data(xl):
             "revenueMix": revenue_mix,
         })
 
-    unique_periods = {item["id"]: item for item in output}
+    unique_periods = {}
+    for item in output:
+        unique_periods.setdefault(item["id"], item)
     return {"periods": list(unique_periods.values())}
 
 
